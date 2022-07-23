@@ -12,7 +12,7 @@ const secret = "ngiT7tLRiiiyrUQoQNonbSts2XIRDfpOimV377zx";
 
 //test
 var saveSearch = function(){
-    localStorage.setItem("pets", JSON.stringify(cities));
+    localStorage.setItem("pets", JSON.stringify(pets));
 };
 
 
