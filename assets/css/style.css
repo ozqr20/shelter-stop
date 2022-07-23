@@ -28,6 +28,9 @@ header{
     background-attachment: fixed;
 }
 
-.hero .title-zip {
-    text-align: center;
+.title-zip{
+    width: 55%;
+    color: #fff;
+    font-size: 18px;
+    font-size: 6vh;
 }
