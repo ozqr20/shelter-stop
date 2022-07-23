@@ -1,3 +1,4 @@
+// Variables (currently unused)
 const pets = [];
 var petSearchEl = document.getElementById("#petSearch");
 var inputSearchEl = document.getElementById("#input-search")
