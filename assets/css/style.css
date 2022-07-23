@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .box {
     width: 20%;
     background-color: transparent;
@@ -22,10 +28,13 @@
 
 header{
     padding: 20px 35px;
-    background-image: url("../images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    height: 20vh;
+    background-image: url("../images/pexels-olga-lukyanova-8904085.jpg");
+    font-family: 'Square Peg', cursive;
+    font-size: 8vh;
 }
 
 .title-zip{
@@ -35,10 +44,20 @@ header{
     font-size: 11vh;
     font-family: 'Square Peg', cursive;
 }
-
-header nav{
-    margin: 7px 0;
+header ul a{
+    padding: 10px;
+    text-decoration: none;
+    color: black;
 }
-header ul{
-    justify-content: block;
+
+header ul a:hover {
+    color:aliceblue
+}
+
+h1{
+    font-family: 'Square Peg', cursive;
+    font-weight: bold;
+    align-items: center;
+    padding-top: 30px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
