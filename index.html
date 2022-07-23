@@ -5,9 +5,15 @@
         <title>The Shelter Shop</title>
         <link rel="stylesheet" href="" /> <!--LINK CSS-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     </head>
 
     <body>
+        <div class="container">
+            <div class="block">
+
+            </div>
+        </div>
         <!-- navigation-->
         <header>
              <h1>
@@ -16,7 +22,7 @@
              <nav>
                  <ul>
                      <li>
-                         <a href="">About Us</a>
+                         <a href=""></a>
                      </li>
                      <li>
                          <a href=""></a>
@@ -32,38 +38,49 @@
         </header>
 
         <!--hero/jumbotron-->
-        <section class="hero">
-            <div class="hero-cta">
-                <h2><!--Shelter Shop Title?--></h2>
-                <p>
-                    <!--About??-->
+        <section class="hero is-warning">
+            <div class="hero-body">
+              <p class="title">
+                  Find your Furever Friend
                 </p>
+           
             </div>
+          </section>
+          <section>
+            <div class="container is-fluid">
+                <div class="notification is-primary">
+                  Why the Shelter Shop?
+                  <p>
+                      <!--About Us-->
+                  </p>
+                </div>  
+                
+                <p>
+            
+            
             <div> <!---THIS CAN BE CHANGED TO A MAP MAYBE??-->
-                <h3><!--Form Title--></h3>
-                <p>Fill out this form ! <!--What are we doing once they fill out form--></p>
-                <!--REMOVE THIS IF DOING MAP INSTEAD-->
-                <form>
-                    <label for="name">Enter full name:</label>
-                    <input type="text" placeholder="Your Name" name="name" id="name" class="form-input" />
-                    <label for="email">Enter email address:</label>
-                    <input type="email" placeholder="Email Address" name="email" id="email" class="form-input" />
-                    <label for="phone">Enter a telephone number:</label>
-                    <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
-                    <button type="submit">
-                        Find My Furry Friend
-                    </button>
-                </form>
-            </div>
-        </section>
-        <!--end hero-->
+                
+                <div class="block">
+                    <div class="box">
+                        <h1>Fill out form</h1>
+                        <form>
+                            <label for="name">Full name:</label>
+                            <input type="text" placeholder="Your Name" name="name" id="name" class="form-input" />
+                            <label for="email">Email address:</label>
+                            <input type="email" placeholder="Email Address" name="email" id="email" class="form-input" />
+                            <label for="phone">Phone number:</label>
+                            <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
+                            <button class="button is-success is-small is-outlined">Find my Furever Friend
+                            </button>
+                        </form>
+                    </div>
 
-         <!--ABOUT SHELTER SHOP section-->
-        <section>
-        <div>
-            <h2>Why shop the Shelter Shop?</h2>
-        </div>    
-        <div>  
+                </div>
+                
+    
+        </section>
+       
+     
             <p>
                 <!--ABOUT US INFORMATION-->
             </p>
@@ -72,10 +89,7 @@
 
         <!--DISPLAYING THE ADOPTABLE PETS-->
         <section>
-        <div> 
-            <h2>Find Your Furever Friend</h2>
-        </div>
-
+    
         <div>
             <!--This section needs to be dynamically created to show up to date adoptable pets-->
         </div>
@@ -89,11 +103,8 @@
             <div>
                 <div>
                     <h3>The Shelter shop</h3>
-                    <p>
-                        Any questions or suggestions?
-                        <br />
-                        Let Us know and we'll be happy to talk to you!
-                    </p>
+                    
+                      </div>    
                 </div>
 
                 <div>
@@ -105,18 +116,25 @@
                         <label for="contact-message">Message</label>
                         <textarea id="contact-message" placeholder="Message"></textarea>
 
-                        <button type="submit">Submit</button>
+                        <button class="button is-black">Submit</button>
+
                     </form>
                 </div>
                 
             </div>
         </section>
 
+    
         <!--Footer-->
-        <footer>
-            <h2> ❤️ Made by the Amazing Giraffes</h2>
-            <div> 
-                &copy; 2022 The Shelter Shop
+        
+        <footer class="footer">
+            <div class="content has-text-centered">
+              <p>
+                <strong>❤️ The Shelter Shop</strong> made by <div> Amazing Giraffes </div> 
+                <div> 
+                    &copy; 2022 The Shelter Shop
+                </div>
+              </p>
             </div>
         </footer>
         <!-- HTTP request library -->
