@@ -1,1 +1,21 @@
-/* Coment css */
+.box {
+    width: 20%;
+    background-color: transparent;
+}
+
+.form-input{
+    border: 1px solid;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    width: 69%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    margin-left: 30px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 100px;
+    text-align: center;
+}
+.block-input {
+    text-align: center;
+}
