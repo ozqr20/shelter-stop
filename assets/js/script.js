@@ -1,27 +1,46 @@
+// Variables (currently unused)
 const pets = [];
-// add key as variable for petfinder
-var key = "kDth6aBoA1LVzzoiCjQkPR3AVoOOEChNhYGXwylaEOPZcrrVrm";
+var petSearchEl = document.getElementById("#petSearch");
+var inputSearchEl = document.getElementById("#input-search")
 
-//test
-var saveSearch = function(){
-    localStorage.setItem("pets", JSON.stringify(cities));
-};
+//Test to see if JS is being read
+console.log("Test verified");
 
+//key and secret key
+const key = "Q4ngIfrwedxSvUsSwlO4rmtzSJJdltVFxiqllg9ZM57pn4rt3o";
+const secret = "GK42fyprvcmaWP7TtS2Kic1KlrSJ7Mi1CZaMBfZg";
 
-var petRead = function(city){
-    var apiUrl = ``  // https goes here 
+var pf = new petfinder.Client({apiKey: "Q4ngIfrwedxSvUsSwlO4rmtzSJJdltVFxiqllg9ZM57pn4rt3o", secret: "GK42fyprvcmaWP7TtS2Kic1KlrSJ7Mi1CZaMBfZg"});
 
-    fetch(apiUrl).then(function(response){
-        if(response.ok){
-            console.log(response);
-            response.json().then(function(data){
-                console.log(data);
-            });
-        }else{
-            alert("Error");
-        }   
+pf.animal.search()
+    .then(function (response) {
+        // Do something with `response.data.animals`
     })
-    .catch(function(error){
-        alert("Unable to connect");
+    .catch(function (error) {
+        // Handle the error
     });
-};
+
+//asyncronous function provided by SDK
+async function showAnimals(animalType, searchBreed, location) {
+    //Show first page of pets
+    let page = 1;
+    
+    //So far this will show results based on type, breed, and location
+    apiResult = await pf.animal.search({
+        type: animalType,
+        breed: searchBreed,
+        location,
+        page,
+        limit: 100,
+    });
+    let Idx = (page - 1) * 100;
+    apiResult.data.animals.forEach(function(animal) {
+        console.log(` -- ${++Idx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
+    });
+    
+    }
+
+    //currently this function only shows dogs in the 32219 florida zip code
+(async function() {
+    await showAnimals("Dog",undefined,"32219");
+})();S
