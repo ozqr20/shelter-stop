@@ -19,3 +19,15 @@
 .block-input {
     text-align: center;
 }
+
+header{
+    padding: 20px 35px;
+    background-image: url("../images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero .title-zip {
+    text-align: center;
+}

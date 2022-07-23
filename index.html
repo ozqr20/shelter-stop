@@ -12,40 +12,30 @@
 
 
     <body>
-        <!--NAV--> <!--NAV-->
-       
-            <div class="block">
-                <nav class="nav">
-                    <div class="nav-left">
-                        <a href="" class="nav-item">
-                            <h1 class="title is-4">THE SHELTER STOP</h1>
-                        </a>
-                        <div class="nav-right nav-menu">
-                            <a href="#" class="nav-item">Home</a>
-                            <a href="#" class="nav-item">About Us</a>
-                            <a href="#" class="nav-item">Contact</a>
-                        </div>
-                    </div>
-                </nav>
+        <header>
+            <h1 class="title is-4">THE SHELTER STOP</h1>
+            <nav>
+                <a href="#Home">Home</a>
+                <a href="#about-us">About Us</a>
+                <a href="#contact">Contact</a>
             </div>
-        </div>
-        
+            </nav>
+        </header>
 
         <!--hero/jumbotron-->
         <section class="hero is-warning">
             <div class="hero-body">
-              <p class="title">
-                  Find your Furever Friend
-                </p>
-                <div class="block block-input">
+                <div class="block block-input level-right">
+                    <p class="title title-zip">
+                        Find your Furever Friend
+                      </p>
                     <div class="box zip-btn">
                         <form >
                             <input type="tel" placeholder="Enter ZipCode" name="phone" id="phone" class="form-input"/>
                             <button class="button is-success is-small is-outlined" type="submit">Find my Furever Friend
                             </button>
                         </form>
-
-                </div>
+                    </div>
            
             </div>
           </section>
@@ -93,7 +83,7 @@
                 </div>
 
                 <div>
-                    <h3>Contact Us</h3>
+                    <h3 id="#contact">Contact Us</h3>
                     <form>
                         <label for="contact-name">Your Name</label>
                         <input type="text" id="contact-name" placeholder="Your Name" />

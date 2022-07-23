@@ -1,4 +1,4 @@
-// Variables ...
+// Variables (currently unused)
 const pets = [];
 var petSearchEl = document.getElementById("#petSearch");
 var inputSearchEl = document.getElementById("#input-search")
@@ -11,6 +11,14 @@ const key = "Q4ngIfrwedxSvUsSwlO4rmtzSJJdltVFxiqllg9ZM57pn4rt3o";
 const secret = "GK42fyprvcmaWP7TtS2Kic1KlrSJ7Mi1CZaMBfZg";
 
 var pf = new petfinder.Client({apiKey: "Q4ngIfrwedxSvUsSwlO4rmtzSJJdltVFxiqllg9ZM57pn4rt3o", secret: "GK42fyprvcmaWP7TtS2Kic1KlrSJ7Mi1CZaMBfZg"});
+
+pf.animal.search()
+    .then(function (response) {
+        // Do something with `response.data.animals`
+    })
+    .catch(function (error) {
+        // Handle the error
+    });
 
 //asyncronous function provided by SDK
 async function showAnimals(animalType, searchBreed, location) {
