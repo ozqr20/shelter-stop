@@ -1,18 +1,20 @@
-// Variables 
 const pets = [];
 var petSearchEl = document.getElementById("#petSearch");
 var inputSearchEl = document.getElementById("#input-search")
 
+//Test to see if JS is being read
+console.log("Test verified");
+
+//key and secret key
+const key = "Q4ngIfrwedxSvUsSwlO4rmtzSJJdltVFxiqllg9ZM57pn4rt3o";
+const secret = "GK42fyprvcmaWP7TtS2Kic1KlrSJ7Mi1CZaMBfZg";
+
+var pf = new petfinder.Client({apiKey: "Q4ngIfrwedxSvUsSwlO4rmtzSJJdltVFxiqllg9ZM57pn4rt3o", secret: "GK42fyprvcmaWP7TtS2Kic1KlrSJ7Mi1CZaMBfZg"});
 
 
-// add key as variable for petfinder
-const key = "kDth6aBoA1LVzzoiCjQkPR3AVoOOEChNhYGXwylaEOPZcrrVrm";
-const secret = "ngiT7tLRiiiyrUQoQNonbSts2XIRDfpOimV377zx";
-
-
-//test
+//testgit
 var saveSearch = function(){
-    localStorage.setItem("pets", JSON.stringify(cities));
+    localStorage.setItem("pets", JSON.stringify(pets));
 };
 
 
@@ -29,34 +31,31 @@ var petRead = function(pet){
             alert("Error");
         }   
     })
-    .catch(function(error){
-        alert("Unable to connect");
+    .catch(function (error) {
+        // Handle the error
     });
-};
 
-
-
-
-var formSubmitHandler = function(event){
-    event.preventDefault();
-    var pet = petSearchEl.value.trim();
-    if(pet){
-        petRead(pet);
-    } else{
-        alert("wrong zip code");
-        // Modal - it needs implementation 
-        //var modal = document.createElement("div");
-        // modal.classList = "modal-content";
-
-        // closeEl = document.createElement("span");
-        // closeEl.classList = "close>&times";
-        // closeEl.textContent = "Invalid Zipcode";
-
-        // modal.appendChild(closeEl);
+//asyncronous function provided by SDK
+async function showAnimals(animalType, searchBreed, location) {
+    //Show first page of pets
+    let page = 1;
+    
+    //So far this will show results based on type, breed, and location
+    apiResult = await pf.animal.search({
+        type: animalType,
+        breed: searchBreed,
+        location,
+        page,
+        limit: 100,
+    });
+    let Idx = (page - 1) * 100;
+    apiResult.data.animals.forEach(function(animal) {
+        console.log(` -- ${++Idx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
+    });
+    
     }
-};
 
-inputSearchEl.addEventListener("submit", formSubmitHandler);
-
-
-// curl -d "grant_type=client_credentials&client_id={kDth6aBoA1LVzzoiCjQkPR3AVoOOEChNhYGXwylaEOPZcrrVrm}&client_secret={ngiT7tLRiiiyrUQoQNonbSts2XIRDfpOimV377zx}" https://api.petfinder.com/v2/oauth2/token
+    //currently this function only shows dogs in the 32219 florida zip code
+(async function() {
+    await showAnimals("Dog",undefined,"32219");
+})();S}
