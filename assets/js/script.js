@@ -1,4 +1,3 @@
-// Variables ...
 const pets = [];
 var petSearchEl = document.getElementById("#petSearch");
 var inputSearchEl = document.getElementById("#input-search")
@@ -12,6 +11,14 @@ const secret = "GK42fyprvcmaWP7TtS2Kic1KlrSJ7Mi1CZaMBfZg";
 
 var pf = new petfinder.Client({apiKey: "Q4ngIfrwedxSvUsSwlO4rmtzSJJdltVFxiqllg9ZM57pn4rt3o", secret: "GK42fyprvcmaWP7TtS2Kic1KlrSJ7Mi1CZaMBfZg"});
 
+pf.animal.search()
+    .then(function (response) {
+        // Do something with `response.data.animals`
+    })
+    .catch(function (error) {
+        // Handle the error
+    });
+
 //asyncronous function provided by SDK
 async function showAnimals(animalType, searchBreed, location) {
     //Show first page of pets
@@ -23,9 +30,9 @@ async function showAnimals(animalType, searchBreed, location) {
         breed: searchBreed,
         location,
         page,
-        limit: 100,
+        limit: 25,
     });
-    let Idx = (page - 1) * 100;
+    let Idx = (page - 1) * 25;
     apiResult.data.animals.forEach(function(animal) {
         console.log(` -- ${++Idx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
     });
@@ -35,4 +42,5 @@ async function showAnimals(animalType, searchBreed, location) {
     //currently this function only shows dogs in the 32219 florida zip code
 (async function() {
     await showAnimals("Dog",undefined,"32219");
-})();S
+})();
+
