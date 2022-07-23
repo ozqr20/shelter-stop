@@ -58,4 +58,4 @@ async function showAnimals(animalType, searchBreed, location) {
     //currently this function only shows dogs in the 32219 florida zip code
 (async function() {
     await showAnimals("Dog",undefined,"32219");
-})();S
+})();S}
