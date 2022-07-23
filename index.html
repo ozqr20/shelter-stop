@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./assets/css/style.css"/>
         <title>The Shelter Shop</title>
+        <link rel="stylesheet" href="" /> <!--LINK CSS-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     </head>
 
     <body>
@@ -17,7 +17,7 @@
              <nav>
                  <ul>
                      <li>
-                         <a href="">About Us</a>
+                         <a href=""></a>
                      </li>
                      <li>
                          <a href=""></a>
@@ -33,25 +33,30 @@
         </header>
 
         <!--hero/jumbotron-->
-        <section class="hero">
-            <div class="hero-cta">
-                <h2><!--Shelter Shop Title?--></h2>
+        <section class="hero is-warning">
+            <div class="hero-body">
+              <p class="title">
+                  Find your Furever Friend
+                </p>
+           
+            </div>
+          </section>
                 <p>
                     <!--About??-->
                 </p>
             </div>
             <div> <!---THIS CAN BE CHANGED TO A MAP MAYBE??-->
                 <h3><!--Form Title--></h3>
-                <p>Fill out this form ! <!--What are we doing once they fill out form--></p>
+                <p>Fill out this form and <!--What are we doing once they fill out form--></p>
                 <!--REMOVE THIS IF DOING MAP INSTEAD-->
-                <form id="input-search">
-                    <!-- <label for="name">Enter full name:</label>
+                <form>
+                    <label for="name">Enter full name:</label>
                     <input type="text" placeholder="Your Name" name="name" id="name" class="form-input" />
                     <label for="email">Enter email address:</label>
-                    <input type="email" placeholder="Email Address" name="email" id="email" class="form-input" /> -->
-                    <label for="phone">Enter your zip code</label>
-                    <input type="zip" placeholder="Zip Code" name="phone" id="phone" class="form-input" />
-                    <button type="submit" class="zipButton">
+                    <input type="email" placeholder="Email Address" name="email" id="email" class="form-input" />
+                    <label for="phone">Enter a telephone number:</label>
+                    <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
+                    <button type="submit">
                         Find My Furry Friend
                     </button>
                 </form>
@@ -61,9 +66,10 @@
 
          <!--ABOUT SHELTER SHOP section-->
         <section>
-        <div>
-            <h2>Why shop the Shelter Shop?</h2>
-        </div>    
+            <div class="container is-fluid">
+                <div class="notification is-primary">
+                  Why the Shelter Shop?
+                </div>  
         <div>  
             <p>
                 <!--ABOUT US INFORMATION-->
@@ -73,11 +79,8 @@
 
         <!--DISPLAYING THE ADOPTABLE PETS-->
         <section>
-        <div> 
-            <h2>Find Your Forever Friend</h2>
-        </div>
-
-        <div id="petSearch">
+    
+        <div>
             <!--This section needs to be dynamically created to show up to date adoptable pets-->
         </div>
         </section>
@@ -90,11 +93,8 @@
             <div>
                 <div>
                     <h3>The Shelter shop</h3>
-                    <p>
-                        Any questions or suggestions?
-                        <br />
-                        Let Us know and we'll be happy to talk to you!
-                    </p>
+                    
+                      </div>    
                 </div>
 
                 <div>
@@ -107,21 +107,26 @@
                         <textarea id="contact-message" placeholder="Message"></textarea>
 
                         <button type="submit">Submit</button>
+
                     </form>
                 </div>
                 
             </div>
         </section>
 
+    
         <!--Footer-->
-        <footer>
-            <h2> ❤️ Made by the Amazing Giraffes</h2>
-            <div> 
-                &copy; 2022 The Shelter Shop
+        
+        <footer class="footer">
+            <div class="content has-text-centered">
+              <p>
+                <strong>❤️ The Shelter Shop</strong> made by <div> Amazing Giraffes </div> 
+                <div> 
+                    &copy; 2022 The Shelter Shop
+                </div>
+              </p>
             </div>
-        </footer>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="./assets/js/script.js"></script>
+          </footer>
+        
     </body>
 </html>
