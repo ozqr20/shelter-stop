@@ -2,9 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>The Shelter Shop</title>
-        <link rel="stylesheet" href="" /> <!--LINK CSS-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/css/style.css"/>
+        <title>The Shelter Shop</title>
     </head>
 
     <body>
@@ -43,14 +44,14 @@
                 <h3><!--Form Title--></h3>
                 <p>Fill out this form ! <!--What are we doing once they fill out form--></p>
                 <!--REMOVE THIS IF DOING MAP INSTEAD-->
-                <form>
-                    <label for="name">Enter full name:</label>
+                <form id="input-search">
+                    <!-- <label for="name">Enter full name:</label>
                     <input type="text" placeholder="Your Name" name="name" id="name" class="form-input" />
                     <label for="email">Enter email address:</label>
-                    <input type="email" placeholder="Email Address" name="email" id="email" class="form-input" />
-                    <label for="phone">Enter a telephone number:</label>
-                    <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
-                    <button type="submit">
+                    <input type="email" placeholder="Email Address" name="email" id="email" class="form-input" /> -->
+                    <label for="phone">Enter your zip code</label>
+                    <input type="zip" placeholder="Zip Code" name="phone" id="phone" class="form-input" />
+                    <button type="submit" class="zipButton">
                         Find My Furry Friend
                     </button>
                 </form>
@@ -73,10 +74,10 @@
         <!--DISPLAYING THE ADOPTABLE PETS-->
         <section>
         <div> 
-            <h2>Find Your Furever Friend</h2>
+            <h2>Find Your Forever Friend</h2>
         </div>
 
-        <div>
+        <div id="petSearch">
             <!--This section needs to be dynamically created to show up to date adoptable pets-->
         </div>
         </section>
@@ -119,5 +120,8 @@
                 &copy; 2022 The Shelter Shop
             </div>
         </footer>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="./assets/js/script.js"></script>
     </body>
 </html>
