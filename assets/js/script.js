@@ -47,17 +47,6 @@ async function showAnimals(animalType, searchBreed, location) {
     
 })();
 
-// Dropdown menu, it allows the box to disappear once the user clicks in another part of the html 
-const menu = document.getElementById('dropdown')
-    menu.addEventListener("click", e=>{
-        e.stopPropagation()
-        menu.classList.toggle('is-active')
-    })
-
-    document.addEventListener("click", function(){
-        menu.classList.remove('is-active')
-    })
-
 //!//
 
 //CODE FOR THE SECOND API BELOW:
