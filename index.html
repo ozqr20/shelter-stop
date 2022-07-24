@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Leaflet map css -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
         <link rel="stylesheet" href="./assets/css/style.css" /> 
@@ -32,35 +33,96 @@
         <!--hero/jumbotron-->
         <section class="hero is-warning ">
             <div class="hero-body">
-                <div class="block block-input level-right">
-                    <p class="title title-zip level-left">
+                <div class="block block-input is-flex">
+                    <p class="title title-zip is-flex is-justify-content-center">
                         Find your Furever Friend
                       </p>
-                    <div class="box zip-btn">
+                    <div class="box zip-btn is-flex">
                         <form >
+                            <!-- User pet selection -->
+                            <div class="block is-flex-direction-row">
+                                <div class="control">
+                                    <!-- Dog selection -->
+                                    <label class="radio" id="dogCheckbox">
+                                        <figure class="button is-small is-white image is-128x128">
+                                            <img src="./assets/images/pet.png" alt="dog icon white with brown" class="user-pet-choice"/>
+                                            <input type="radio" name="question"> Dog 
+                                        </figure>
+                                    </label>
+
+                                    <!-- Cat selection -->
+                                    <label class="radio" id="catCheckbox">
+                                        <figure class="button is-small is-white image is-128x128">
+                                            <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white" class="user-pet-choice"/>
+                                            <input type="radio" name="question"> Cat
+                                        </figure>
+                                    </label>
+
+                                    <!-- Bird selection -->
+                                    <label class="radio" id="birdCheckbox">
+                                        <figure class="button is-small is-white image is-128x128">
+                                            <img src="./assets/images/bird.png" alt="Bird icon white with brown" class="user-pet-choice"/>
+                                            <input type="radio" name="question"> Bird
+                                        </figure>  
+                                    </label>
+
+                                    <!-- Others selection -->
+                                    <label class="radio" id="othersCheckbox">
+                                        <figure class="button is-small is-white image is-128x128">
+                                            <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown" class="user-pet-choice"/>
+                                            <input type="radio" name="question"> Others
+                                        </figure>  
+                                    </label>
+                                </div>
+                            </div> <!--End pet selection division -->
+
+                            <!-- Gender, Age, Size and Stalled labor selections  -->
+                            <div class="block">
+
+                                <!-- Gender -->
+                                <div class="select" id="dropdownGender">
+                                    <select>
+                                        <option value="dog">Female</option>
+                                        <option value="female">Male</option>
+                                    </select>
+                                </div>
+
+                                <!-- Size -->
+                                <div class="select" id="dropdownSize">
+                                    <select>
+                                        <option value="small">Small (0-25 lbs)</option>
+                                        <option value="medium">Medium (26-60 lbs)</option>
+                                        <option value="large">Large (61-100 lbs)</option>
+                                    </select>
+                                </div>
+
+                                <!-- Age -->
+                                <div class="select" id="dropdownAge">
+                                    <select>
+                                        <option value="baby">Baby</option>
+                                        <option value="young">Young</option>
+                                        <option value="adult">Adult</option>
+                                        <option value="senior">Senior</option>
+                                    </select>
+                                </div>
+
+                                <!--Stalled labor-->
+                                <div class="select" id="dropdown">
+                                    <select>
+                                        <option value="false">False</option>
+                                        <option value="true">True</option>
+                                    </select>
+                                </div>
+                                <br><br>
                             <input type="tel" placeholder="Enter ZipCode" name="phone" id="zipCode" class="form-input"/>
-                            <button class="button is-success is-small is-outlined" type="submit">Find my Furever Friend
-                            </button>
+                            <button class="button is-success is-small is-outlined" type="submit">Find my Furever Friend</button>
                         </form>
                     </div>
+                </div>
             </div>
-          </section>
+        </section>
 
-          <!-- User pet selection -->
-          <div class="block is-flex">
-                
-            <span class="button is-small is-white">
-                <img src="./assets/images/pet.png" alt="dog icon white with brown" class="user-pet-choice is-horizontal-center"/>
-            </span>
-                
-            <span class="button is-small is-white">
-                <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white" class="user-pet-choice is-horizontal-center"/>
-            </span>
 
-            <span class="button is-small is-white">
-                    <img src="./assets/images/bird.png" alt="Bird icon white with brown" class="user-pet-choice is-horizontal-center"/>
-            </span>  
-          </div>
 
 
 
@@ -130,6 +192,7 @@
                 Credits
                 <a href="https://www.flaticon.com/free-icons/cat" title="cat icons">Cat icons created by Freepik - Flaticon</a>
                 <a href="https://www.flaticon.com/free-icons/bird" title="bird icons">Bird icons created by Freepik - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/pet-shop" title="pet shop icons">Pet shop icons created by Freepik - Flaticon</a>
                 <a href="https://www.flaticon.com/free-icons/dog" title="dog icons">Dog icons created by Freepik - Flaticon</a>
             </button>
 

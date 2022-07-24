@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-.box {
-    width: 20%;
+.zip-btn{
+    width: 100%;
     background-color: transparent;
 }
 
@@ -14,7 +14,7 @@
     display: block;
     padding: 7px 15px;
     font-size: 16px;
-    width: 69%;
+    width: 40%;
     margin-bottom: 15px;
     margin-top: 5px;
     margin-left: 30px;
@@ -38,7 +38,7 @@ header{
 }
 
 .title-zip{
-    width: 55%;
+    width: 100%;
     color: #fff;
     font-size: 18px;
     font-size: 11vh;
@@ -61,6 +61,15 @@ h1{
     padding-top: 30px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+.user-pet-choice{
+    justify-content: center;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    padding: 20px 10px;
+}
+
 
 /* Styling for map below */
 
@@ -105,19 +114,4 @@ h1{
 
 input:nth-child(1) {
     margin-bottom: 0px;
-}
-img {
-    justify-content: center;
-    width: 33%;
-    padding: 10px 20px;
-}
-span .button{
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: auto;
 }
