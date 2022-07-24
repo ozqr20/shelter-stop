@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Leaflet map css -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
         <link rel="stylesheet" href="./assets/css/style.css" /> 
@@ -32,38 +33,86 @@
         <!--hero/jumbotron-->
         <section class="hero is-warning ">
             <div class="hero-body">
-                <div class="block block-input level-right">
-                    <p class="title title-zip level-left">
+                <div class="block block-input is-flex">
+                    <p class="title title-zip is-flex is-justify-content-center">
                         Find your Furever Friend
                       </p>
-                    <div class="box zip-btn">
+                    <div class="box zip-btn is-flex">
                         <form >
+                            <!-- User pet selection -->
+                            <div class="block is-flex-direction-row">
+
+                                <div class="control">
+                                    <!-- Dog selection -->
+                                    <label class="radio" id="dogCheckbox">
+                                        <figure class="button is-small is-white image is-128x128">
+                                            <img src="./assets/images/pet.png" alt="dog icon white with brown" class="user-pet-choice"/>
+                                            <input type="radio" name="question"> Dog 
+                                        </figure>
+                                    </label>
+
+                                    <!-- Cat selection -->
+                                    <label class="radio" id="catCheckbox">
+                                        <figure class="button is-small is-white image is-128x128">
+                                            <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white" class="user-pet-choice"/>
+                                            <input type="radio" name="question"> Cat
+                                        </figure>
+                                    </label>
+
+                                    <!-- Bird selection -->
+                                    <label class="radio" id="birdCheckbox">
+                                        <figure class="button is-small is-white image is-128x128">
+                                            <img src="./assets/images/bird.png" alt="Bird icon white with brown" class="user-pet-choice"/>
+                                            <input type="radio" name="question"> Bird
+                                        </figure>  
+                                    </label>
+
+                                    <!-- Others selection -->
+                                    <label class="radio" id="othersCheckbox">
+                                        <figure class="button is-small is-white image is-128x128">
+                                            <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown" class="user-pet-choice"/>
+                                            <input type="radio" name="question"> Others
+                                        </figure>  
+                                    </label>
+                                </div>
+                            </div> <!--End pet selection division -->
+
+                            <!-- Gender, Age & Age selections  -->
+                            <div class="block">
+                                <div class="box">
+                                    <div class="dropdown is-justify-content-center" id="dropdown">
+                                        <div class="dropdown-trigger">
+                                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                                <span>Gender</span>
+                                                <span class="icon is-small">
+                                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                                            <div class="dropdown-content ">
+                                              <a class="dropdown-item">
+                                                <option>Female</option>
+                                              </a>
+                                              <a class="dropdown-item">
+                                                <option>Male</option>
+                                              </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <input type="tel" placeholder="Enter ZipCode" name="phone" id="zipCode" class="form-input"/>
                             <button class="button is-success is-small is-outlined" type="submit">Find my Furever Friend
                             </button>
                         </form>
                     </div>
+                </div>
             </div>
-          </section>
+        </section>
 
-          <!-- User pet selection -->
-          <div class="block is-flex ">
-                
-                <figure class="button is-small is-white image is-128x128">
-                    <img src="./assets/images/pet.png" alt="dog icon white with brown" class="user-pet-choice"/>
-                </figure>
-                    
-                <figure class="button is-small is-white image is-128x128">
-                    <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white" class="user-pet-choice"/>
-                </figure>
 
-                <figure class="button is-small is-white image is-128x128">
-                    <img src="./assets/images/bird.png" alt="Bird icon white with brown" class="user-pet-choice"/>
-                </figure>  
-                <figure class="button is-small is-white image is-128x128">
-                    <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown" class="user-pet-choice"/>
-                </figure>  
-          </div>
 
 
 

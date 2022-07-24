@@ -2,6 +2,7 @@
 const pets = [];
 var petSearchEl = document.getElementById("#petSearch");
 var inputSearchEl = document.getElementById("#input-search")
+var dropDownEl = document.getElementById("#dropdown");
 
 //Test to see if JS is being read
 console.log("Test verified");
@@ -32,9 +33,9 @@ async function showAnimals(animalType, searchBreed, location) {
         breed: searchBreed,
         location,
         page,
-        limit: 2,
+        limit: 1,
     });
-    let Idx = (page - 1) * 2;
+    let Idx = (page - 1) * 1;
     apiResult.data.animals.forEach(function(animal) {
         console.log(` -- ${++Idx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
     });
@@ -46,6 +47,16 @@ async function showAnimals(animalType, searchBreed, location) {
     
 })();
 
+// Dropdown menu, it allows the box to disappear once the user clicks in another part of the html 
+const menu = document.getElementById('dropdown')
+    menu.addEventListener("click", e=>{
+        e.stopPropagation()
+        menu.classList.toggle('is-active')
+    })
+
+    document.addEventListener("click", function(){
+        menu.classList.remove('is-active')
+    })
 
 //!//
 
