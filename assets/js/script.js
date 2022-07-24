@@ -9,6 +9,7 @@ const submitButton = document.getElementById('submit-button');
 //Test to see if JS is being read
 console.log("Test verified");
 
+
 //key and secret key
 const key = "yU3oem5LTLC04KuehXub1betrxaHobbODTgGpASsVR3IGZ0mXt";
 const secret = "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp";
@@ -50,93 +51,93 @@ submitButton.addEventListener('click',pullpets);
 
 //!//
 
-// //Default map layer
-// let map = L.map('map', {
-//     layers: MQ.mapLayer(),
-//     //Random lattitude, longitude (Orlando, FL)
-//     center: [28.5384, -81.3789],
-//     zoom: 12
-// });
-//     function runDirection(start, end) {
+//Default map layer
+let map = L.map('map', {
+    layers: MQ.mapLayer(),
+    //Random lattitude, longitude (Orlando, FL)
+    center: [28.5384, -81.3789],
+    zoom: 12
+});
+    function runDirection(start, end) {
         
-//         //recreating new map layer after removal
-//         map = L.map('map', {
-//             layers: MQ.mapLayer(),
-//             center: [28.5384, -81.3789],
-//             zoom: 12
-//         });
+        //recreating new map layer after removal
+        map = L.map('map', {
+            layers: MQ.mapLayer(),
+            center: [28.5384, -81.3789],
+            zoom: 12
+        });
         
-//         var dir = MQ.routing.directions();
+        var dir = MQ.routing.directions();
 
-//         dir.route({
-//             locations: [
-//                 start,
-//                 end
-//             ]
-//         });
+        dir.route({
+            locations: [
+                start,
+                end
+            ]
+        });
     
 
-//         CustomRouteLayer = MQ.Routing.RouteLayer.extend({
-//             createStartMarker: (location) => {
-//                 var custom_icon;
-//                 var marker;
+        CustomRouteLayer = MQ.Routing.RouteLayer.extend({
+            createStartMarker: (location) => {
+                var custom_icon;
+                var marker;
 
-//                 custom_icon = L.icon({
-//                     iconUrl: './assets/images/red.png',
-//                     iconSize: [20, 29],
-//                     iconAnchor: [10, 29],
-//                     popupAnchor: [0, -29]
-//                 });
+                custom_icon = L.icon({
+                    iconUrl: './assets/images/red.png',
+                    iconSize: [20, 29],
+                    iconAnchor: [10, 29],
+                    popupAnchor: [0, -29]
+                });
 
-//                 marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map);
+                marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map);
 
-//                 return marker;
-//             },
+                return marker;
+            },
 
-//             createEndMarker: (location) => {
-//                 var custom_icon;
-//                 var marker;
-//                 //Use blue marker image for destination
-//                 custom_icon = L.icon({
-//                     iconUrl: './assets/images/blue.png',
-//                     iconSize: [20, 29],
-//                     iconAnchor: [10, 29],
-//                     popupAnchor: [0, -29]
-//                 });
+            createEndMarker: (location) => {
+                var custom_icon;
+                var marker;
+                //Use blue marker image for destination
+                custom_icon = L.icon({
+                    iconUrl: './assets/images/blue.png',
+                    iconSize: [20, 29],
+                    iconAnchor: [10, 29],
+                    popupAnchor: [0, -29]
+                });
 
-//                 marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map);
+                marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map);
 
-//                 return marker;
-//             }
-//         });
+                return marker;
+            }
+        });
         
-//         map.addLayer(new CustomRouteLayer({
-//             directions: dir,
-//             fitBounds: true
-//         })); 
-//     }
+        map.addLayer(new CustomRouteLayer({
+            directions: dir,
+            fitBounds: true
+        })); 
+    }
 
-// //Function that runs when form is submitted
-// function submitForm(event) {
-//     event.preventDefault();
+//Function that runs when form is submitted
+function submitForm(event) {
+    event.preventDefault();
 
-//     //Deletes map layers
-//     map.remove();
+    //Deletes map layers
+    map.remove();
 
-//     //Gets data for the map, currently hardcoded to zip code 32219 and a destination value for the form, below is the appropriate start commented out:
-//     //start = document.getElementById("zipCode");
-//     start = "32219";
-//     end = document.getElementById("destination").value;
+    //Gets data for the map, currently hardcoded to zip code 32219 and a destination value for the form, below is the appropriate start commented out:
+    //start = document.getElementById("zipCode");
+    start = $("#zipCode").val();
+    end = document.getElementById("destination").value;
 
-//     // run directions function
-//     runDirection(start, end);
+    // run directions function
+    runDirection(start, end);
 
-//     // reset form
-//     document.getElementById("form").reset();
-// }
+    // reset form
+    document.getElementById("form").reset();
+}
 
-// //Assigns the form to form variable
-// const form = document.getElementById('form');
+//Assigns the form to form variable
+const form = document.getElementById('form');
 
-// //Call the submitForm() function when submitting the form - WILL NEED TO CHANGE THIS TO MATCH THE PETFINDER API UPON CLICKING A PET
-// form.addEventListener('submit', submitForm);
+//Call the submitForm() function when submitting the form - WILL NEED TO CHANGE THIS TO MATCH THE PETFINDER API UPON CLICKING A PET
+form.addEventListener('submit', submitForm);

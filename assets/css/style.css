@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.zipinput {
+    max-width: 230px;
+    text-align: center;
+}
 .zip-btn{
     width: 100%;
     background-color: transparent;

@@ -40,7 +40,7 @@
                     Find your Furever Friend
                 </p>
                 <div class="box zip-btn is-flex">
-                    <form>
+                    
                         <!-- User pet selection -->
                         <div class="block is-flex-direction-row">
                             <div class="control">
@@ -49,7 +49,7 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/pet.png" alt="dog icon white with brown"
                                             class="user-pet-choice" />
-                                        <input type="radio" name="question"> Dog
+                                        <input type="radio" name="question"> Dogs
                                     </figure>
                                 </label>
 
@@ -58,7 +58,7 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white"
                                             class="user-pet-choice" />
-                                        <input type="radio" name="question"> Cat
+                                        <input type="radio" name="question"> Cats
                                     </figure>
                                 </label>
 
@@ -67,7 +67,7 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/bird.png" alt="Bird icon white with brown"
                                             class="user-pet-choice" />
-                                        <input type="radio" name="question"> Bird
+                                        <input type="radio" name="question"> Birds
                                     </figure>
                                 </label>
 
@@ -76,7 +76,7 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown"
                                             class="user-pet-choice" />
-                                        <input type="radio" name="question"> Others
+                                        <input type="radio" name="question"> All Pets
                                     </figure>
                                 </label>
                             </div>
@@ -87,7 +87,11 @@
                         <div class="block">
 
                             <!-- Gender -->
-                            <div class="select" id="dropdownGender">
+                            <div>
+                            <h2 class = "subtitle">Sex</h2>
+                            </div>
+                            <div class="select is-rounded" id="dropdownGender">
+                                
                                 <select>
                                     <option value="dog">Female</option>
                                     <option value="female">Male</option>
@@ -95,16 +99,23 @@
                             </div>
 
                             <!-- Size -->
-                            <div class="select" id="dropdownSize">
+                            <div>
+                            <h2 class = "subtitle">Size</h2>
+                            </div>
+                            <div class="select is-rounded" id="dropdownSize">
                                 <select>
                                     <option value="small">Small (0-25 lbs)</option>
                                     <option value="medium">Medium (26-60 lbs)</option>
                                     <option value="large">Large (61-100 lbs)</option>
                                 </select>
                             </div>
+                            
 
                             <!-- Age -->
-                            <div class="select" id="dropdownAge">
+                            <div>
+                            <h2 class = "subtitle">Age</h2>
+                            </div>
+                            <div class="select is-rounded" id="dropdownAge">
                                 <select>
                                     <option value="baby">Baby</option>
                                     <option value="young">Young</option>
@@ -113,18 +124,24 @@
                                 </select>
                             </div>
 
-                            <!--Stalled labor-->
-                            <div class="select" id="dropdown">
+                            <!--Spayed/Neutered-->
+                            <div>
+                                <h2 class = "subtitle">Spayed / Neutered</h2>
+                                </div>
+                            <div class="select is-rounded" id="dropdown">
                                 <select>
-                                    <option value="false">False</option>
-                                    <option value="true">True</option>
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
                                 </select>
                             </div>
-                            <br><br>
-                            <input type="tel" placeholder="Enter ZipCode" name="phone" id="zipCode"
-                                class="form-input" />
+                            <div>
+                                <h2 class = "subtitle">Enter Zip Code:</h2>
+                            </div>
+                            <input type="tel" placeholder="Enter Zip Code" name="phone" id="zipCode"
+                                class="input zipinput is-rounded" />
                         </div>
-                    </form>
+                    
+                    
                     <button class="button is-success is-small is-outlined" id="submit-button">Find my Furever
                         Friend</button>
                 </div>
