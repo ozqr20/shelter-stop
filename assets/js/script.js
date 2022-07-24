@@ -45,3 +45,10 @@ async function showAnimals(animalType, searchBreed, location) {
     await showAnimals("Dog",undefined,"32219");
 })();
 
+
+//!//
+
+//CODE FOR THE SECOND API BELOW:
+
+//!//
+
