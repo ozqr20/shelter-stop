@@ -42,7 +42,7 @@ async function showAnimals(animalType, searchBreed, location) {
 
     //currently this function only shows dogs in the 32219 florida zip code
 (async function() {
-    await showAnimals("Dog",undefined,"32219");
+    await showAnimals("Dog",undefined,32219);
 })();
 
 
@@ -84,7 +84,7 @@ let map = L.map('map', {
                 var marker;
 
                 custom_icon = L.icon({
-                    iconUrl: 'img/red.png',
+                    iconUrl: './assets/images/red.png',
                     iconSize: [20, 29],
                     iconAnchor: [10, 29],
                     popupAnchor: [0, -29]
@@ -100,7 +100,7 @@ let map = L.map('map', {
                 var marker;
                 //Use blue marker image for destination
                 custom_icon = L.icon({
-                    iconUrl: 'img/blue.png',
+                    iconUrl: './assets/images/blue.png',
                     iconSize: [20, 29],
                     iconAnchor: [10, 29],
                     popupAnchor: [0, -29]
@@ -118,3 +118,27 @@ let map = L.map('map', {
         })); 
     }
 
+//Function that runs when form is submitted
+function submitForm(event) {
+    event.preventDefault();
+
+    //Deletes map layers
+    map.remove();
+
+    //Gets data for the map, currently hardcoded to zip code 32219 and a destination value for the form, below is the appropriate start commented out:
+    //start = document.getElementById("zipCode");
+    start = "32219";
+    end = document.getElementById("destination").value;
+
+    // run directions function
+    runDirection(start, end);
+
+    // reset form
+    document.getElementById("form").reset();
+}
+
+//Assigns the form to form variable
+const form = document.getElementById('form');
+
+//Call the submitForm() function when submitting the form - WILL NEED TO CHANGE THIS TO MATCH THE PETFINDER API UPON CLICKING A PET
+form.addEventListener('submit', submitForm);
