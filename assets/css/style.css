@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.zipinput {
+    max-width: 230px;
+    text-align: center;
+}
 .zip-btn{
     width: 100%;
     background-color: transparent;
@@ -113,5 +117,5 @@ h1{
 }
 
 input:nth-child(1) {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
