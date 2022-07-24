@@ -1,35 +1,20 @@
 // Variables (currently unused)
 const pets = [];
 var petSearchEl = document.getElementById("#petSearch");
-var inputSearchEl = document.getElementById("#input-search")
+var inputSearchEl = document.getElementById("#input-search");
 var dropDownEl = document.getElementById("#dropdown");
+const submitButton = document.getElementById('submit-button');
+
 
 //Test to see if JS is being read
 console.log("Test verified");
 
 //key and secret key
-const key = "3MhZWv3SRcv8wPldKWvstjLodBxUaDsorgFz5QCH9ytZZUg35U";
-const secret = "xcxJUki5IurEVc8LldFqf7ZAzdERM8MJihnCNinr";
+const key = "yU3oem5LTLC04KuehXub1betrxaHobbODTgGpASsVR3IGZ0mXt";
+const secret = "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp";
 
-var pf = new petfinder.Client({apiKey: "3MhZWv3SRcv8wPldKWvstjLodBxUaDsorgFz5QCH9ytZZUg35U", secret: "xcxJUki5IurEVc8LldFqf7ZAzdERM8MJihnCNinr"});
 
-pf.animal.search()
-<<<<<<< HEAD
-    // .then(function (response) {
-    //     // Do something with `response.data.animals`
-    // })
-    // .catch(function (error) {
-    //     // Handle the error
-    // });
-=======
-    .then(function (response) {
-        // Do something with `response.data.animals`
-        console.log(response);
-    })
-    .catch(function (error) {
-        // Handle the error
-    });
->>>>>>> develop
+var pf = new petfinder.Client({apiKey: "yU3oem5LTLC04KuehXub1betrxaHobbODTgGpASsVR3IGZ0mXt", secret: "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp"});
 
 //asyncronous function provided by SDK
 async function showAnimals(animalType, searchBreed, location) {
@@ -40,7 +25,7 @@ async function showAnimals(animalType, searchBreed, location) {
     apiResult = await pf.animal.search({
         type: animalType,
         breed: searchBreed,
-        
+        location,
         page,
         limit: 1,
     });
@@ -49,12 +34,15 @@ async function showAnimals(animalType, searchBreed, location) {
         console.log(` -- ${++Idx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
     });
     }
-
-    //currently this function only shows dogs in the 32219 florida zip code
-(async function() {
-    await showAnimals("Dog",undefined,32219);
     
-})();
+    async function pullpets() {
+    //currently this function only shows dogs in the 32219 florida zip code
+
+    await showAnimals("Dog",undefined,$("#zipCode").val());
+    console.log(showAnimals);
+    }
+
+submitButton.addEventListener('click',pullpets);
 
 //!//
 
