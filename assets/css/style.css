@@ -106,3 +106,18 @@ h1{
 input:nth-child(1) {
     margin-bottom: 10px;
 }
+img {
+    justify-content: center;
+    width: 33%;
+    padding: 10px 20px;
+}
+span .button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: auto;
+}
