@@ -47,6 +47,7 @@ async function showAnimals(animalType, searchBreed, location) {
     
 })();
 
+
 //!//
 
 //CODE FOR THE SECOND API BELOW:
