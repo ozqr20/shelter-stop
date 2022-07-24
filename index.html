@@ -7,38 +7,65 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
+        <!-- Leaflet map css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" /> 
     </head>
 
 
     <body>
-        <!--NAV--> <!--NAV-->
-       
-            <div class="block">
-                <nav class="nav">
-                    <div class="nav-left">
-                        <a href="" class="nav-item">
-                            <h1 class="title is-4">THE SHELTER STOP</h1>
-                        </a>
-                        <div class="nav-right nav-menu">
-                            <a href="#" class="nav-item">Home</a>
-                            <a href="#" class="nav-item">About Us</a>
-                            <a href="#" class="nav-item">Contact</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        
+        <header class="level mb-0">
+
+            <h1 class="title is-vcentered">THE SHELTER STOP</h1>
+            <nav>
+                <ul class="level-item">
+                    <a class="link is-info" href="#Home">Home</a>
+                    <a class="link is-info" href="#about-us">About Us</a>
+                    <a class="link is-info" href="#contact">Contact</a>
+                </ul>
+            </nav>
+        </header>
 
         <!--hero/jumbotron-->
-        <section class="hero is-warning">
+        <section class="hero is-warning ">
             <div class="hero-body">
-              <p class="title">
-                  Find your Furever Friend
-                </p>
-           
+                <div class="block block-input level-right">
+                    <p class="title title-zip level-left">
+                        Find your Furever Friend
+                      </p>
+                    <div class="box zip-btn">
+                        <form >
+                            <input type="tel" placeholder="Enter ZipCode" name="phone" id="zipCode" class="form-input"/>
+                            <button class="button is-success is-small is-outlined" type="submit">Find my Furever Friend
+                            </button>
+                        </form>
+                    </div>
             </div>
           </section>
+
+          <!-- User pet selection -->
+          <div class="block is-flex ">
+                
+                <figure class="button is-small is-white image is-128x128">
+                    <img src="./assets/images/pet.png" alt="dog icon white with brown" class="user-pet-choice"/>
+                </figure>
+                    
+                <figure class="button is-small is-white image is-128x128">
+                    <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white" class="user-pet-choice"/>
+                </figure>
+
+                <figure class="button is-small is-white image is-128x128">
+                    <img src="./assets/images/bird.png" alt="Bird icon white with brown" class="user-pet-choice"/>
+                </figure>  
+                <figure class="button is-small is-white image is-128x128">
+                    <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown" class="user-pet-choice"/>
+                </figure>  
+          </div>
+
+
 
           <!--About us us-->
           <div class="block">
@@ -51,32 +78,6 @@
                   </div>
               </article>
           </div>
-
-
-          
-
-                
-               
-            
-            
-            <div> <!---THIS CAN BE CHANGED TO A MAP MAYBE??-->
-                
-                <div class="block">
-                    <div class="box">
-                        <h1>Fill out form</h1>
-                        <form>
-                            <label for="name">Full name:</label>
-                            <input type="text" placeholder="Your Name" name="name" id="name" class="form-input" />
-                            <label for="email">Email address:</label>
-                            <input type="email" placeholder="Email Address" name="email" id="email" class="form-input" />
-                            <label for="phone">Phone number:</label>
-                            <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
-                            <button class="button is-success is-small is-outlined">Find my Furever Friend
-                            </button>
-                        </form>
-                    </div>
-
-                </div>
                 
     
         </section>
@@ -109,7 +110,7 @@
                 </div>
 
                 <div>
-                    <h3>Contact Us</h3>
+                    <h3 id="#contact">Contact Us</h3>
                     <form>
                         <label for="contact-name">Your Name</label>
                         <input type="text" id="contact-name" placeholder="Your Name" />
@@ -125,10 +126,32 @@
             </div>
         </section>
 
-    
+        <!--Credits-->
+
+        <div class="credits">
+            <button class="button btn-credits">
+                Credits
+                <a href="https://www.flaticon.com/free-icons/cat" title="cat icons">Cat icons created by Freepik - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/bird" title="bird icons">Bird icons created by Freepik - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/pet-shop" title="pet shop icons">Pet shop icons created by Freepik - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/dog" title="dog icons">Dog icons created by Freepik - Flaticon</a>
+            </button>
+
+        </div>
+
         <!--Footer-->
         
         <footer class="footer">
+            <!-- Added map to footer: -->
+            <div class="hero is-warning " id='map'>
+                <div class="formBlock">
+                    <form id="form">
+                <!-- WILL NEED TO DELETE THIS INPUT AND CHANGE TO CLICK READER IN JS, JUST A PLACEHOLDER FOR NOW: -->
+                <input type="text" name="end" class="input" id="destination" placeholder="Choose end point" />
+                <button style="display: none;" type="submit">Get Directions</button>
+            </form>
+            </div>
+            </div>
             <div class="content has-text-centered">
               <p>
                 <strong>❤️ The Shelter Shop</strong> made by <div> Amazing Giraffes </div> 
@@ -145,6 +168,11 @@
         <!-- Jquery link -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <!-- Links the leaflet map API -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+        <!-- API links for leaflet addons -->
+        <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=S8d7L47mdyAG5nHG09dUnSPJjreUVPeC"></script>
+        <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=S8d7L47mdyAG5nHG09dUnSPJjreUVPeC"></script>
         <!-- Linked js to HTML -->
         <script src="./assets/js/script.js"></script>
     </body>
