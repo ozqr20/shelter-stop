@@ -61,3 +61,18 @@ h1{
     padding-top: 30px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+img{
+    justify-content: center;
+    width: 33%;
+    padding: 10px 20px;
+}
+span .button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: auto;
+}
