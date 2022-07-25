@@ -49,7 +49,7 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/pet.png" alt="dog icon white with brown"
                                             class="user-pet-choice" />
-                                        <input type="radio" name="question"> Dogs
+                                        <input type="radio" id="Dogs" value="Dogs" name="Dogs"> Dogs
                                     </figure>
                                 </label>
 
@@ -58,7 +58,7 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white"
                                             class="user-pet-choice" />
-                                        <input type="radio" name="question"> Cats
+                                        <input type="radio" id="Cats" value="Cats" name="Cats"> Cats
                                     </figure>
                                 </label>
 
@@ -67,7 +67,7 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/bird.png" alt="Bird icon white with brown"
                                             class="user-pet-choice" />
-                                        <input type="radio" name="question"> Birds
+                                        <input type="radio" id="Birds" value="Birds" name="Birds"> Birds
                                     </figure>
                                 </label>
 
@@ -76,7 +76,7 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown"
                                             class="user-pet-choice" />
-                                        <input type="radio" name="question"> All Pets
+                                        <input type="radio" id="undefined" value="undefined" name="undefined"> All Pets
                                     </figure>
                                 </label>
                             </div>
@@ -90,11 +90,11 @@
                             <div>
                             <h2 class = "subtitle">Sex</h2>
                             </div>
-                            <div class="select is-rounded" id="dropdownGender">
+                            <div class="select is-rounded" >
                                 
-                                <select>
-                                    <option value="dog">Female</option>
-                                    <option value="female">Male</option>
+                                <select id="dropdownGender">
+                                    <option value="female">Female</option>
+                                    <option value="male">Male</option>
                                 </select>
                             </div>
 
@@ -102,11 +102,12 @@
                             <div>
                             <h2 class = "subtitle">Size</h2>
                             </div>
-                            <div class="select is-rounded" id="dropdownSize">
-                                <select>
+                            <div class="select is-rounded">
+                                <select id="dropdownSize">
                                     <option value="small">Small (0-25 lbs)</option>
                                     <option value="medium">Medium (26-60 lbs)</option>
                                     <option value="large">Large (61-100 lbs)</option>
+                                    <option value="xlarge">XLarge (100+ lbs)</option>
                                 </select>
                             </div>
                             
@@ -115,8 +116,8 @@
                             <div>
                             <h2 class = "subtitle">Age</h2>
                             </div>
-                            <div class="select is-rounded" id="dropdownAge">
-                                <select>
+                            <div class="select is-rounded" >
+                                <select id="dropdownAge">
                                     <option value="baby">Baby</option>
                                     <option value="young">Young</option>
                                     <option value="adult">Adult</option>
@@ -128,8 +129,8 @@
                             <div>
                                 <h2 class = "subtitle">Spayed / Neutered</h2>
                                 </div>
-                            <div class="select is-rounded" id="dropdown">
-                                <select>
+                            <div class="select is-rounded">
+                                <select id="dropdownNeutered">
                                     <option value="false">No</option>
                                     <option value="true">Yes</option>
                                 </select>

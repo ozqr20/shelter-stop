@@ -6,6 +6,7 @@ var dropDownEl = document.getElementById("#dropdown");
 const submitButton = document.getElementById('submit-button');
 
 
+
 //Test to see if JS is being read
 console.log("Test verified");
 
@@ -18,14 +19,16 @@ const secret = "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp";
 var pf = new petfinder.Client({apiKey: "yU3oem5LTLC04KuehXub1betrxaHobbODTgGpASsVR3IGZ0mXt", secret: "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp"});
 
 //asyncronous function provided by SDK
-async function showAnimals(animalType, searchBreed, location) {
+async function showAnimals(animalType, sexType, sizeType, ageType, location) {
     //Show first page of pets
     let page = 1;
     
     //So far this will show results based on type, breed, and location
     apiResult = await pf.animal.search({
         type: animalType,
-        breed: searchBreed,
+        sex: sexType,
+        size: sizeType,
+        age: ageType,
         location,
         page,
         limit: 1,
@@ -39,8 +42,13 @@ async function showAnimals(animalType, searchBreed, location) {
     async function pullpets() {
     //currently this function only shows dogs in the 32219 florida zip code
 
-    await showAnimals("Dog",undefined,$("#zipCode").val());
-    console.log(showAnimals);
+    await showAnimals("Cat",$("#dropdownGender").val(),$("#dropdownSize").val(),$("#dropdownAge").val(),$("#zipCode").val(),);
+    console.log("Showing results for:")
+    console.log($("#dropdownGender").val());
+    console.log($("#dropdownSize").val());
+    console.log($("#dropdownAge").val());
+    console.log("Spayed/Neutered: "+$("#dropdownNeutered").val());
+    console.log($("#zipCode").val());
     }
 
 submitButton.addEventListener('click',pullpets);
