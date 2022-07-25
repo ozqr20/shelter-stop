@@ -53,6 +53,7 @@ async function showAnimals(animalType, sexType, sizeType, ageType, location) {
 
 submitButton.addEventListener('click',pullpets);
 
+
 //!//
 
 //CODE FOR THE SECOND API BELOW:
