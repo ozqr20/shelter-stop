@@ -1,140 +1,124 @@
-/* Coment css */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body,
-.wrapper {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #c2c5c9;
- 
+    background-image: url("https://media.istockphoto.com/photos/small-rottweiler-puppy-lying-outdoors-picture-id1087244152?k=20&m=1087244152&s=612x612&w=0&h=IrjnDaS5uQDanIOUkrCSd2biqAGiJDlmiFWvGi01v5o=");
   }
 
-
-.wrapper {
-  padding-top: 40px;
-  padding-left: 30px;
-  padding-right: 30px;
+in: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-  text-align: center;
-  padding: 20px;
-  padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+.zipinput {
+    max-width: 230px;
+    text-align: center;
+}
+.zip-btn{
+    width: 100%;
+    background-color: transparent;
 }
 
-.card {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
-  border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
-  font-size: 18px;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 30px 40px;
+.form-input{
+    border: 1px solid;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    width: 40%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    margin-left: 30px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 100px;
+    text-align: center;
+}
+.block-input {
+    text-align: center;
 }
 
-.card-header::after {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
+header{
+    padding: 20px 35px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 20vh;
+    background-image: url("../images/pexels-olga-lukyanova-8904085.jpg");
+    font-family: 'Square Peg', cursive;
+    font-size: 8vh;
 }
 
-.card-body {
-  min-height: 100px;
+.title-zip{
+    width: 100%;
+    color: #fff;
+    font-size: 15px;
+    font-size: 11vh;
+    font-family: 'Square Peg', cursive;
+}
+header ul a{
+    padding: 10px;
+    text-decoration: none;
+    color: black;
 }
 
-.card-footer {
-  text-align: center;
+header ul a:hover {
+    color:aliceblue
 }
 
-.card-footer::before {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
+h1{
+    font-family: 'Square Peg', cursive;
+    font-weight: bold;
+    align-items: center;
+    padding-top: 30px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.card-footer::after {
-  content: " ";
-  display: block;
-  clear: both;
+.user-pet-choice{
+    justify-content: center;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    padding: 20px 10px;
 }
 
-.btn {
-  border: none;
-  background-color: hsl(360, 91%, 36%);
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
-  color: hsl(0, 0%, 100%);
-  display: inline-block;
-  font-size: 22px;
-  line-height: 22px;
-  margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
-  text-align: center;
-  cursor: pointer;
+
+/* Styling for map below */
+
+#map {
+    text-align: center;
+    height:50vh;
+    width: 50vh;
+    padding: 0;
+    margin: 0;
+    position: center;
+    flex: flex;
+    margin: auto;
 }
 
-button[:enabled] {
-  cursor: default;
-  background: #c0c7cf;
+.formBlock {
+    max-width: 300px;
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    position: absolute;
+    flex: flex;
+    text-align: center;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    z-index: 999;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    border-radius: 5px;
+    width: 100%;
 }
 
-.float-right {
-  float: right;
+.leaflet-top .leaflet-control {
+    margin-top: 180px;
 }
 
-#password {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  display: block;
-  width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px solid #c0c7cf;
-  border-radius: 6px;
-  resize: none;
-  overflow: hidden;
+.input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    border-radius: 3px;
 }
 
-@media (max-width: 690px) {
-  .btn {
-    font-size: 1rem;
-    margin: 16px 0px 0px 0px;
-    padding: 10px 15px;
-  }
-
-  #password {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .btn {
-    font-size: 0.8rem;
-  }
+input:nth-child(1) {
+    margin-bottom: 15px;
 }

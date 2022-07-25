@@ -1,123 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>The Shelter Shop</title>
-        <link rel="stylesheet" href="" /> <!--LINK CSS-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    </head>
 
-    <body>
-        <!-- navigation-->
-        <header>
-             <h1>
-                <a href="/">The Shelter Shop</a>
-             </h1>
-             <nav>
-                 <ul>
-                     <li>
-                         <a href=""></a>
-                     </li>
-                     <li>
-                         <a href=""></a>
-                     </li>
-                     <li>
-                         <a href=""></a>
-                     </li>
-                     <li>
-                         <a href=""></a>
-                     </li>
-                 </ul>
-             </nav>
-        </header>
+<head>
+    <meta charset="UTF-8" />
+    <title>The Shelter Shop</title>
+    <link rel="stylesheet" href="" />
+    <!--LINK CSS-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Leaflet map css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
 
-        <!--hero/jumbotron-->
-        <section class="hero">
-            <div class="hero-cta">
-                <h2><!--Shelter Shop Title?--></h2>
-                <p>
-                    <!--About??-->
+<body>
+    <header class="level mb-0">
+
+        <h1 class="title is-vcentered">THE SHELTER STOP</h1>
+        <nav>
+            <ul class="level-item">
+                <a class="link is-info" href="#Home">Home</a>
+                <a class="link is-info" href="#about-us">About Us</a>
+                <a class="link is-info" href="#contact">Contact</a>
+            </ul>
+        </nav>
+    </header>
+
+    <!--hero/jumbotron-->
+    <section class="hero is-warning ">
+        <div class="hero-body">
+            <div class="block block-input is-flex">
+                <p class="title title-zip is-flex is-justify-content-center">
+                    Find your Furever Friend
                 </p>
-            </div>
-            <div> <!---THIS CAN BE CHANGED TO A MAP MAYBE??-->
-                <h3><!--Form Title--></h3>
-                <p>Fill out this form and <!--What are we doing once they fill out form--></p>
-                <!--REMOVE THIS IF DOING MAP INSTEAD-->
-                <form>
-                    <label for="name">Enter full name:</label>
-                    <input type="text" placeholder="Your Name" name="name" id="name" class="form-input" />
-                    <label for="email">Enter email address:</label>
-                    <input type="email" placeholder="Email Address" name="email" id="email" class="form-input" />
-                    <label for="phone">Enter a telephone number:</label>
-                    <input type="tel" placeholder="Phone Number" name="phone" id="phone" class="form-input" />
-                    <button type="submit">
-                        Find My Furry Friend
-                    </button>
-                </form>
-            </div>
-        </section>
-        <!--end hero-->
+                <div class="box zip-btn is-flex">
+                    
+                        <!-- User pet selection -->
+                        <div class="block is-flex-direction-row">
+                            <div class="control">
+                                <!-- Dog selection -->
+                                <label class="radio" id="dogCheckbox">
+                                    <figure class="button is-small is-white image is-128x128">
+                                        <img src="./assets/images/pet.png" alt="dog icon white with brown"
+                                            class="user-pet-choice" />
+                                        <input type="radio" name="question"> Dogs
+                                    </figure>
+                                </label>
 
-         <!--ABOUT SHELTER SHOP section-->
-        <section>
-        <div>
-            <h2>Why shop the Shelter Shop?</h2>
-        </div>    
-        <div>  
-            <p>
-                <!--ABOUT US INFORMATION-->
-            </p>
-        </div>      
-        </section>
+                                <!-- Cat selection -->
+                                <label class="radio" id="catCheckbox">
+                                    <figure class="button is-small is-white image is-128x128">
+                                        <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white"
+                                            class="user-pet-choice" />
+                                        <input type="radio" name="question"> Cats
+                                    </figure>
+                                </label>
 
-        <!--DISPLAYING THE ADOPTABLE PETS-->
-        <section>
-        <div> 
-            <h2>Find Your Furever Friend</h2>
+                                <!-- Bird selection -->
+                                <label class="radio" id="birdCheckbox">
+                                    <figure class="button is-small is-white image is-128x128">
+                                        <img src="./assets/images/bird.png" alt="Bird icon white with brown"
+                                            class="user-pet-choice" />
+                                        <input type="radio" name="question"> Birds
+                                    </figure>
+                                </label>
+
+                                <!-- Others selection -->
+                                <label class="radio" id="othersCheckbox">
+                                    <figure class="button is-small is-white image is-128x128">
+                                        <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown"
+                                            class="user-pet-choice" />
+                                        <input type="radio" name="question"> All Pets
+                                    </figure>
+                                </label>
+                            </div>
+                        </div>
+                        <!--End pet selection division -->
+
+                        <!-- Gender, Age, Size and Stalled labor selections  -->
+                        <div class="block">
+
+                            <!-- Gender -->
+                            <div>
+                            <h2 class = "subtitle">Sex</h2>
+                            </div>
+                            <div class="select is-rounded" >
+                                
+                                <select id="dropdownGender">
+                                    <option value="female">Female</option>
+                                    <option value="male">Male</option>
+                                </select>
+                            </div>
+
+                            <!-- Size -->
+                            <div>
+                            <h2 class = "subtitle">Size</h2>
+                            </div>
+                            <div class="select is-rounded">
+                                <select id="dropdownSize">
+                                    <option value="small">Small (0-25 lbs)</option>
+                                    <option value="medium">Medium (26-60 lbs)</option>
+                                    <option value="large">Large (61-100 lbs)</option>
+                                    <option value="xlarge">XLarge (100+ lbs)</option>
+                                </select>
+                            </div>
+                            
+
+                            <!-- Age -->
+                            <div>
+                            <h2 class = "subtitle">Age</h2>
+                            </div>
+                            <div class="select is-rounded" >
+                                <select id="dropdownAge">
+                                    <option value="baby">Baby</option>
+                                    <option value="young">Young</option>
+                                    <option value="adult">Adult</option>
+                                    <option value="senior">Senior</option>
+                                </select>
+                            </div>
+
+                            <!--Spayed/Neutered-->
+                            <div>
+                                <h2 class = "subtitle">Spayed / Neutered</h2>
+                                </div>
+                            <div class="select is-rounded">
+                                <select id="dropdownNeutered">
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select>
+                            </div>
+                            <div>
+                                <h2 class = "subtitle">Enter Zip Code:</h2>
+                            </div>
+                            <input type="tel" placeholder="Enter Zip Code" name="phone" id="zipCode"
+                                class="input zipinput is-rounded" />
+                        </div>
+                    
+                    
+                    <button class="button is-success is-small is-outlined" id="submit-button">Find my Furever
+                        Friend</button>
+                </div>
+            </div>
         </div>
+    </section>
+
+
+
+
+
+    <!--About us us-->
+    <div class="block">
+        <article class="message is-success">
+            <div class="message-header">
+                <p>About us here at The Shelter Stop</p>
+            </div>
+            <div class="message-body">
+                At Shelter Stop it is our goal to provide the best experience possible while searching for your furever friend! 
+            </div>
+        </article>
+    </div>
+
+
+    </section>
+
+
+    <p>
+        <!--ABOUT US INFORMATION-->
+    </p>
+    </div>
+    </section>
+
+    <!--DISPLAYING THE ADOPTABLE PETS-->
+    <section>
 
         <div>
             <!--This section needs to be dynamically created to show up to date adoptable pets-->
         </div>
-        </section>
+    </section>
 
-        <!--CONTACT US SECTION???-->
-        <section>
-        <div>   
+    <!--CONTACT US SECTION???-->
+    <section>
+        <div>
             <h2>Reach Out</h2>
-        </div>     
+        </div>
+        <div>
             <div>
-                <div>
-                    <h3>The Shelter shop</h3>
-                    <p>
-                        Any questions or suggestions?
-                        <br />
-                        Let Us know and we'll be happy to talk to you!
-                    </p>
-                </div>
+                <h3>The Shelter shop</h3>
 
-                <div>
-                    <h3>Contact Us</h3>
-                    <form>
-                        <label for="contact-name">Your Name</label>
-                        <input type="text" id="contact-name" placeholder="Your Name" />
-
-                        <label for="contact-message">Message</label>
-                        <textarea id="contact-message" placeholder="Message"></textarea>
-
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-                
             </div>
-        </section>
+        </div>
 
-        <!--Footer-->
-        <footer>
-            <h2> ❤️ Made by the Amazing Giraffes</h2>
-            <div> 
+        <div>
+            <h3 id="#contact">Contact Us</h3>
+            <form>
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" placeholder="Your Name" />
+
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" placeholder="Message"></textarea>
+
+                <button class="button is-black">Submit</button>
+
+            </form>
+        </div>
+
+        </div>
+    </section>
+
+    <!--Credits-->
+
+    <div class="credits">
+        <button class="button btn-credits">
+            Credits
+            <a href="https://www.flaticon.com/free-icons/cat" title="cat icons">Cat icons created by Freepik -
+                Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/bird" title="bird icons">Bird icons created by Freepik -
+                Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/pet-shop" title="pet shop icons">Pet shop icons created by
+                Freepik - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/dog" title="dog icons">Dog icons created by Freepik -
+                Flaticon</a>
+        </button>
+
+    </div>
+
+    <!--Footer-->
+
+    <footer class="footer">
+        <!-- Added map to footer: -->
+        <div class="is-warning" id='map'>
+            <div class="formBlock">
+                <form id="form">
+                    <!-- WILL NEED TO DELETE THIS INPUT AND CHANGE TO CLICK READER IN JS, JUST A PLACEHOLDER FOR NOW: -->
+                    <input type="text" name="end" class="input" id="destination" placeholder="Choose end point" />
+                    <button style="display: none;" type="submit">Get Directions</button>
+                </form>
+            </div>
+        </div>
+        <div class="content has-text-centered">
+            <p>
+                <strong>❤️ The Shelter Shop</strong> made by
+            <div> Amazing Giraffes </div>
+            <div>
                 &copy; 2022 The Shelter Shop
             </div>
-        </footer>
-    </body>
+            </p>
+        </div>
+    </footer>
+    <!-- HTTP request library -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Software development kit for petfinder -->
+    <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
+    <!-- Jquery link -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- Links the leaflet map API -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <!-- API links for leaflet addons -->
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=S8d7L47mdyAG5nHG09dUnSPJjreUVPeC"></script>
+    <script
+        src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=S8d7L47mdyAG5nHG09dUnSPJjreUVPeC"></script>
+    <!-- Linked js to HTML -->
+    <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Statu
