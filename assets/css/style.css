@@ -2,6 +2,8 @@ body {
     background-image: url("https://media.istockphoto.com/photos/small-rottweiler-puppy-lying-outdoors-picture-id1087244152?k=20&m=1087244152&s=612x612&w=0&h=IrjnDaS5uQDanIOUkrCSd2biqAGiJDlmiFWvGi01v5o=");
   }
 
+
+/* This is showing up as an error, but i'm not sure what in:0 is for. Don't want to mess with until I consult group*/
 in: 0;
     padding: 0;
     box-sizing: border-box;
