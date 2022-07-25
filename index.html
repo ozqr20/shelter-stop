@@ -22,7 +22,7 @@
 <body>
     <header class="level mb-0">
 
-        <h1 class="title is-vcentered">THE SHELTER STOP</h1>
+        <h1 class="shelter-title is-vcentered">THE SHELTER STOP</h1>
         <nav>
             <ul class="level-item">
                 <a class="link is-info" href="#home">Home</a>
@@ -88,7 +88,7 @@
 
                             <!-- Gender -->
                             <div>
-                            <h2 class = "subtitle">Sex</h2>
+                            <h2 class="subtitle">Sex</h2>
                             </div>
                             <div class="select is-rounded" >
                                 
@@ -100,7 +100,7 @@
 
                             <!-- Size -->
                             <div>
-                            <h2 class = "subtitle">Size</h2>
+                            <h2 class="subtitle">Size</h2>
                             </div>
                             <div class="select is-rounded">
                                 <select id="dropdownSize">
@@ -151,35 +151,27 @@
     </section>
 
 
-
-    <!--About Us-->
-    <div class="block" id="about-us">
-        <article class="message is-success">
-            <div class="message-header">
-                <p>About Us Here at The Shelter Stop</p>
-            </div>
-            <div class="message-body">
-                The Shelter Stop was created to increase views of adoptable pets, in order to maximize the rehoming rates of those friends in need. 
-                <br/>
-                When searching for a new pet, it's important to find your perfect match, but what if that perfect match isn't showing on one site? Or in one shelter? 
-                <br/>
-                That's where The Shelter Stop comes in. 
-                <br/>
-                By pulling adoptable pets from multiple locations, we provide a one stop shop that will help ensure no friend in need is overlooked. We hope we can help you find your furever friend, wherever they may be.
-            </div>
-        </article>
-    </div>
-
-
+    <section>
+        <!--About Us-->
+        <div class="block" id="about-us">
+            <article class="message is-success">
+                <div class="message-header">
+                    <p>About Us Here at The Shelter Stop</p>
+                </div>
+                <div class="message-body">
+                    The Shelter Stop was created to increase views of adoptable pets, in order to maximize the rehoming rates of those friends in need. 
+                    <br/>
+                    When searching for a new pet, it's important to find your perfect match, but what if that perfect match isn't showing on one site? Or in one shelter? 
+                    <br/>
+                    That's where The Shelter Stop comes in. 
+                    <br/>
+                    By pulling adoptable pets from multiple locations, we provide a one stop shop that will help ensure no friend in need is overlooked. We hope we can help you find your furever friend, wherever they may be.
+                </div>
+            </article>
+        </div>
     </section>
 
-
-    <p>
-        <!--ABOUT US INFORMATION-->
-    </p>
-    </div>
-    </section>
-
+    <!--ARE WE KEEPING THIS SECTION IN THE HERO??-->
     <!--DISPLAYING THE ADOPTABLE PETS-->
     <section>
 
@@ -188,20 +180,11 @@
         </div>
     </section>
 
-    <!--CONTACT US SECTION???-->
-    <section>
-        <div>
-            <h2>Reach Out</h2>
-        </div>
-        <div>
-            <div>
-                <h3>The Shelter Stop</h3>
-
-            </div>
-        </div>
-
-        <div>
-            <h3 id="#contact">Contact Us</h3>
+    <!--CONTACT US SECTION-->
+    <section class="contact">
+    
+        <div class="contact-form">
+            <h3>Contact Us</h3>
             <form>
                 <label for="contact-name">Your Name</label>
                 <input type="text" id="contact-name" placeholder="Your Name" />
@@ -209,12 +192,10 @@
                 <label for="contact-message">Message</label>
                 <textarea id="contact-message" placeholder="Message"></textarea>
 
-                <button class="button is-black">Submit</button>
-
+                <button class="button">Submit</button>
             </form>
         </div>
 
-        </div>
     </section>
 
     <!--Credits-->
@@ -249,7 +230,7 @@
         </div>
         <div class="content has-text-centered">
             <p>
-                <strong>❤️ The Shelter Stop</strong> made by
+                <strong>🐾 The Shelter Stop</strong> made by
             <div> Amazing Giraffes </div>
             <div>
                 &copy; 2022 The Shelter Stop
@@ -257,6 +238,9 @@
             </p>
         </div>
     </footer>
+
+
+    <!--LINKS TO SCRIPTS-->
     <!-- HTTP request library -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Software development kit for petfinder -->
