@@ -33,23 +33,6 @@ function getRadioValue() {
 }
 
 
-
-// let radioBtns = document.querySelectorAll("input[name='question']");
-// let result = document.getElementById("result");
-
-// let findSelected = () => {
-//     let selected = document.querySelectorAll("input[name='question']:checked.value");
-//     result.textContent = `Type: ${selected}`;
-//     console.log(`${selected}`);
-// }
-
-// radioBtns.forEach(radioBtn => {
-//     radioBtn.addEventListener("change",findSelected);
-// });
-
-// findSelected();
-
-
 //asyncronous function provided by SDK
 async function showAnimals(animalType, sexType, sizeType, ageType, house_trainedType, special_needsType, location) {
     //Show first page of pets
