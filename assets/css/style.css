@@ -24,6 +24,7 @@ section {
 
 /*Style Header Section*/
 header {
+    font-family: 'Square Peg', cursive;
     padding: 20px 35px;
     background-color: var(--tertiary-color);
     display: flex;
@@ -44,7 +45,7 @@ header {
 
 header h1 {
     font-weight: bold;
-    font-size: 36px;
+    font-size: 5.00vw;
     color: var(--primary-color);
     margin: 0;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -69,7 +70,7 @@ header nav ul {
 header nav ul li a {
     padding: 10px 15px;
     font-weight: lighter;
-    font-size: 1.55vw;
+    font-size: 2.5vw;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -135,8 +136,9 @@ footer a {
 }
 
 .hero-cta h2 {
+    font-family: 'Square Peg', cursive;
     font-style: italic;
-    font-size: 55px;
+    font-size: 6.00vw;
     color: var(--primary-color);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -146,7 +148,9 @@ footer a {
 
 /*Style About Us Section*/
 .section-title {
-    font-size: 48px;
+    font-family: 'Square Peg', cursive;
+    font-weight: bold;
+    font-size: 5.00vw;
     color: var(--secondary-color);
     border-bottom: 3px solid;
     padding-bottom: 20px;
