@@ -197,6 +197,24 @@ footer a {
 }
 /*Map Styling Ends*/
 
+/*----------------------------------------------------------*/
+
+/*Style Pet Search Section*/
+.pet-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    align-items: flex-start;
+}
+
+.pet-container > .card {
+    max-width: 30rem;
+}
+.pet-image {
+    max-height: 30rem;
+}
+/*Pet Search Section Styling End*/
 
 /*Style Contact Us Section*/
 .contact {

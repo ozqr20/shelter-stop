@@ -99,100 +99,120 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/pet.png" alt="dog icon white with brown"
                                             class="user-pet-choice" />
-                                        <input type="radio" name="question"> Dogs
+                                        <input onclick="getRadioValue()" type="radio" id="Dogs" name="question" value="Dog">
+                                        Dogs
                                     </figure>
                                 </label>
-            
+    
                                 <!-- Cat selection -->
                                 <label class="radio" id="catCheckbox">
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white"
                                             class="user-pet-choice" />
-                                        <input type="radio" name="question"> Cats
+                                        <input onclick="getRadioValue()" type="radio" id="Cats" name="question" value="Cat">
+                                        Cats
                                     </figure>
                                 </label>
-            
+    
                                 <!-- Bird selection -->
                                 <label class="radio" id="birdCheckbox">
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/bird.png" alt="Bird icon white with brown"
                                             class="user-pet-choice" />
-                                        <input type="radio" name="question"> Birds
+                                        <input onclick="getRadioValue()" type="radio" id="Birds" name="question"
+                                            value="Bird"> Birds
                                     </figure>
                                 </label>
-            
+    
                                 <!-- Others selection -->
                                 <label class="radio" id="othersCheckbox">
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown"
                                             class="user-pet-choice" />
-                                        <input type="radio" name="question"> All Pets
+                                        <input onclick="getRadioValue()" type="radio" id="undefined" name="question"
+                                            value=""> All Pets
                                     </figure>
                                 </label>
+                                <p id="result"></p>
                             </div>
                         </div>
                         <!--End pet selection division -->
-            
+    
                         <!-- Gender, Age, Size and Stalled labor selections  -->
                         <div class="block">
-            
+    
                             <!-- Gender -->
                             <div>
-                            <h2 class="subtitle">Sex</h2>
+                                <h2 class="subtitle">Sex</h2>
                             </div>
-                            <div class="select is-rounded" >
-                                
+                            <div class="select is-rounded">
+    
                                 <select id="dropdownGender">
                                     <option value="female">Female</option>
                                     <option value="male">Male</option>
+                                    <option value="">No Preference</option>
                                 </select>
                             </div>
-            
+    
                             <!-- Size -->
                             <div>
-                            <h2 class="subtitle">Size</h2>
+                                <h2 class="subtitle">Size</h2>
                             </div>
                             <div class="select is-rounded">
                                 <select id="dropdownSize">
-                                    <option value="small">Small (0-25 lbs)</option>
-                                    <option value="medium">Medium (26-60 lbs)</option>
-                                    <option value="large">Large (61-100 lbs)</option>
-                                    <option value="xlarge">XLarge (100+ lbs)</option>
+                                    <option value="small">Small</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="large">Large</option>
+                                    <option value="xlarge">X-Large</option>
+                                    <option value="">No Preference</option>
                                 </select>
                             </div>
-                            
-            
+    
+    
                             <!-- Age -->
                             <div>
-                            <h2 class = "subtitle">Age</h2>
+                                <h2 class="subtitle">Age</h2>
                             </div>
-                            <div class="select is-rounded" >
+                            <div class="select is-rounded">
                                 <select id="dropdownAge">
                                     <option value="baby">Baby</option>
                                     <option value="young">Young</option>
                                     <option value="adult">Adult</option>
                                     <option value="senior">Senior</option>
+                                    <option value="">No Preference</option>
                                 </select>
                             </div>
-            
-                            <!--Spayed/Neutered-->
+    
+                            <!--added house trained drop down-->
                             <div>
-                                <h2 class = "subtitle">Spayed / Neutered</h2>
-                                </div>
+                                <h2 class="subtitle">House-trained?</h2>
+                            </div>
                             <div class="select is-rounded">
-                                <select id="dropdownNeutered">
-                                    <option value="false">No</option>
+                                <select id="dropdownHT">
+                                    <option value="false">Not A Problem</option>
                                     <option value="true">Yes</option>
                                 </select>
                             </div>
+                            <!--added special needs drop down-->
                             <div>
-                                <h2 class = "subtitle">Enter Zip Code:</h2>
+                                <h2 class="subtitle">Special needs?</h2>
+                            </div>
+                            <div class="select is-rounded">
+                                <select id="dropdownSN">
+                                    <option value="false">Prefer None</option>
+                                    <option value="true">Special Needs Welcomed</option>
+                                </select>
+                            </div>
+                            <div>
+                                <h2 class="subtitle">Enter Zip Code:</h2>
                             </div>
                             <input type="tel" placeholder="Enter Zip Code" name="phone" id="zipCode"
                                 class="input zipinput is-rounded" />
                         </div>
-                    
-                        <button class="button is-success is-small is-outlined" id="submit-button">Find my Furever Friend</button>
+    
+    
+                        <button class="button is-success is-small is-outlined" id="submit-button">Find my Furever
+                            Friend</button>
                     </div>
                 </article>
             </div>
@@ -204,13 +224,13 @@
                 <h2 class="section-title primary-border">Locate Your ********</h2>
             </div>
 
-            <div class="is-warning" id='map'>
-                <div class="formBlock">
-                    <form id="form">
-                        <!-- WILL NEED TO DELETE THIS INPUT AND CHANGE TO CLICK READER IN JS, JUST A PLACEHOLDER FOR NOW: -->
-                        <input type="text" name="end" class="input" id="destination" placeholder="Choose end point" />
-                        <button style="display: none;" type="submit">Get Directions</button>
-                    </form>
+                <div class="is-warning" id='map'>
+                    <div class="formBlock">
+                        <form id="form">
+                            <!-- WILL NEED TO DELETE THIS INPUT AND CHANGE TO CLICK READER IN JS, JUST A PLACEHOLDER FOR NOW: -->
+                            <input type="text" name="end" class="input" id="destination" placeholder="Choose end point" />
+                        </form>
+                    </div>
                 </div>
             </div>
 
