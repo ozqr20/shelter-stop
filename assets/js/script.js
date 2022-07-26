@@ -1,8 +1,5 @@
 // Variables (currently unused)
 const pets = [];
-var petSearchEl = document.getElementById("#petSearch");
-var inputSearchEl = document.getElementById("#input-search");
-var dropDownEl = document.getElementById("#dropdown");
 const submitButton = document.getElementById('submit-button');
 
 
@@ -38,7 +35,17 @@ async function showAnimals(animalType, sexType, sizeType, ageType, location) {
         console.log(` -- ${++Idx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
     });
     }
-    
+
+    // This implementation did not work 
+    // $(document).ready(function(){
+    //     $("input[type='submit-button']").click(function(){
+    //         var radioValue = $("input[name='type']:checked").val();
+    //         if(radioValue){
+    //             console.log(radioValue)
+    //         }
+    //     })
+    // })
+
     async function pullpets() {
     //currently this function only shows dogs in the 32219 florida zip code
 
