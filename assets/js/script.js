@@ -6,7 +6,6 @@ var dropDownEl = document.getElementById("#dropdown");
 const submitButton = document.getElementById('submit-button');
 
 
-
 //Test to see if JS is being read
 console.log("Test verified");
 
@@ -17,6 +16,38 @@ const secret = "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp";
 
 
 var pf = new petfinder.Client({apiKey: "yU3oem5LTLC04KuehXub1betrxaHobbODTgGpASsVR3IGZ0mXt", secret: "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp"});
+
+//Select radio button value for animal type value:
+
+var radioValue = undefined;
+
+function getRadioValue() {
+    var radio = document.getElementsByName('question');
+    for(i=0; i < radio.length; i++) {
+        if(radio[i].checked) {
+        console.log("Type selected: " + radio[i].value + "!");
+        radioValue = radio[i].value;
+        }
+    }
+}
+
+
+
+// let radioBtns = document.querySelectorAll("input[name='question']");
+// let result = document.getElementById("result");
+
+// let findSelected = () => {
+//     let selected = document.querySelectorAll("input[name='question']:checked.value");
+//     result.textContent = `Type: ${selected}`;
+//     console.log(`${selected}`);
+// }
+
+// radioBtns.forEach(radioBtn => {
+//     radioBtn.addEventListener("change",findSelected);
+// });
+
+// findSelected();
+
 
 //asyncronous function provided by SDK
 async function showAnimals(animalType, sexType, sizeType, ageType, location) {
@@ -42,7 +73,7 @@ async function showAnimals(animalType, sexType, sizeType, ageType, location) {
     async function pullpets() {
     //currently this function only shows dogs in the 32219 florida zip code
 
-    await showAnimals("Cat",$("#dropdownGender").val(),$("#dropdownSize").val(),$("#dropdownAge").val(),$("#zipCode").val(),);
+    await showAnimals(radioValue,$("#dropdownGender").val(),$("#dropdownSize").val(),$("#dropdownAge").val(),$("#zipCode").val(),);
     console.log("Showing results for:")
     console.log($("#dropdownGender").val());
     console.log($("#dropdownSize").val());

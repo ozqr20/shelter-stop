@@ -49,7 +49,7 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/pet.png" alt="dog icon white with brown"
                                             class="user-pet-choice" />
-                                        <input type="radio" id="Dogs" value="Dogs" name="Dogs"> Dogs
+                                        <input onclick="getRadioValue()" type="radio" id="Dogs" name="question" value="Dog"> Dogs
                                     </figure>
                                 </label>
 
@@ -58,7 +58,7 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white"
                                             class="user-pet-choice" />
-                                        <input type="radio" id="Cats" value="Cats" name="Cats"> Cats
+                                        <input onclick="getRadioValue()" type="radio" id="Cats" name="question" value="Cat" > Cats
                                     </figure>
                                 </label>
 
@@ -67,7 +67,7 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/bird.png" alt="Bird icon white with brown"
                                             class="user-pet-choice" />
-                                        <input type="radio" id="Birds" value="Birds" name="Birds"> Birds
+                                        <input onclick="getRadioValue()" type="radio" id="Birds" name="question" value="Bird"> Birds
                                     </figure>
                                 </label>
 
@@ -76,9 +76,10 @@
                                     <figure class="button is-small is-white image is-128x128">
                                         <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown"
                                             class="user-pet-choice" />
-                                        <input type="radio" id="undefined" value="undefined" name="undefined"> All Pets
+                                        <input onclick="getRadioValue()" type="radio" id="undefined" name="question" value=""> All Pets
                                     </figure>
                                 </label>
+                                <p id="result"></p>
                             </div>
                         </div>
                         <!--End pet selection division -->
