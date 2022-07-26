@@ -74,7 +74,20 @@ h1{
     padding: 20px 10px;
 }
 
+.pet-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    align-items: flex-start;
+}
 
+.pet-container > .card {
+    max-width: 30rem;
+}
+.pet-image {
+    max-height: 30rem;
+}
 /* Styling for map below */
 
 #map {
