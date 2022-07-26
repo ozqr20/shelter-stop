@@ -17,6 +17,6 @@ INSERT URL HERE
 INSERT IMAGE CAPTURE HERE
 
 ## Contribution
-Edited by Oscar(LAST NAME?), Zachary Dokey, Ashley Warford, Christian ( LAST NAME?), Julia Coronado
+Edited by Oscar Manosalva, Zachary Dokey, Ashley Warford, Christian Garcia, Julia Coronado
 
 #### Project 1- By: Amazing Giraffes
