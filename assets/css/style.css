@@ -1,1 +1,121 @@
-/* Coment css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.zipinput {
+    max-width: 230px;
+    text-align: center;
+}
+.zip-btn{
+    width: 100%;
+    background-color: transparent;
+}
+
+.form-input{
+    border: 1px solid;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    width: 40%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    margin-left: 30px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 100px;
+    text-align: center;
+}
+.block-input {
+    text-align: center;
+}
+
+header{
+    padding: 20px 35px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 20vh;
+    background-image: url("../images/pexels-olga-lukyanova-8904085.jpg");
+    font-family: 'Square Peg', cursive;
+    font-size: 8vh;
+}
+
+.title-zip{
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    font-size: 11vh;
+    font-family: 'Square Peg', cursive;
+}
+header ul a{
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+header ul a:hover {
+    color:aliceblue
+}
+
+h1{
+    font-family: 'Square Peg', cursive;
+    font-weight: bold;
+    align-items: center;
+    padding-top: 30px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.user-pet-choice{
+    justify-content: center;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    padding: 20px 10px;
+}
+
+
+/* Styling for map below */
+
+#map {
+    text-align: center;
+    height:50vh;
+    width: 50vh;
+    padding: 0;
+    margin: 0;
+    position: center;
+    flex: flex;
+    margin: auto;
+}
+
+.formBlock {
+    max-width: 300px;
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    position: absolute;
+    flex: flex;
+    text-align: center;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    z-index: 999;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.leaflet-top .leaflet-control {
+    margin-top: 180px;
+}
+
+.input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+input:nth-child(1) {
+    margin-bottom: 0px;
+}

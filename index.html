@@ -1,59 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>The Shelter Shop</title>
-        <link rel="stylesheet" href="" /> <!--LINK CSS-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
-    </head>
 
+<head>
+    <meta charset="UTF-8" />
+    <title>The Shelter Stop</title>
+    <link rel="stylesheet" href="" />
+    <!--LINK CSS-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Leaflet map css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
 
-    <body>
-        <!--NAV--> <!--NAV-->
-       
-            <div class="block">
-                <nav class="nav">
-                    <div class="nav-left">
-                        <a href="" class="nav-item">
-                            <h1 class="title is-4">THE SHELTER STOP</h1>
-                        </a>
-                        <div class="nav-right nav-menu">
-                            <a href="#" class="nav-item">Home</a>
-                            <a href="#" class="nav-item">About Us</a>
-                            <a href="#" class="nav-item">Contact</a>
+<body>
+    <header class="level mb-0">
+
+        <h1 class="title is-vcentered">THE SHELTER STOP</h1>
+        <nav>
+            <ul class="level-item">
+                <a class="link is-info" href="#home">Home</a>
+                <a class="link is-info" href="#about-us">About Us</a>
+                <a class="link is-info" href="#contact">Contact</a>
+            </ul>
+        </nav>
+    </header>
+
+    <!--hero/jumbotron-->
+    <section class="hero is-warning ">
+        <div class="hero-body">
+            <div class="block block-input is-flex">
+                <p class="title title-zip is-flex is-justify-content-center">
+                    Find Your Furever Friend 
+                </p>
+                <div class="box zip-btn is-flex">
+
+                    <!-- User pet selection -->
+                    <div class="block is-flex-direction-row">
+                        <div class="control">
+                            <!-- Dog selection -->
+                            <label class="radio" id="dogCheckbox">
+                                <figure class="button is-small is-white image is-128x128">
+                                    <img src="./assets/images/pet.png" alt="dog icon white with brown"
+                                        class="user-pet-choice" />
+                                    <input onclick="getRadioValue()" type="radio" id="Dogs" name="question" value="Dog">
+                                    Dogs
+                                </figure>
+                            </label>
+
+                            <!-- Cat selection -->
+                            <label class="radio" id="catCheckbox">
+                                <figure class="button is-small is-white image is-128x128">
+                                    <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white"
+                                        class="user-pet-choice" />
+                                    <input onclick="getRadioValue()" type="radio" id="Cats" name="question" value="Cat">
+                                    Cats
+                                </figure>
+                            </label>
+
+                            <!-- Bird selection -->
+                            <label class="radio" id="birdCheckbox">
+                                <figure class="button is-small is-white image is-128x128">
+                                    <img src="./assets/images/bird.png" alt="Bird icon white with brown"
+                                        class="user-pet-choice" />
+                                    <input onclick="getRadioValue()" type="radio" id="Birds" name="question"
+                                        value="Bird"> Birds
+                                </figure>
+                            </label>
+
+                            <!-- Others selection -->
+                            <label class="radio" id="othersCheckbox">
+                                <figure class="button is-small is-white image is-128x128">
+                                    <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown"
+                                        class="user-pet-choice" />
+                                    <input onclick="getRadioValue()" type="radio" id="undefined" name="question"
+                                        value=""> All Pets
+                                </figure>
+                            </label>
+                            <p id="result"></p>
                         </div>
                     </div>
-                </nav>
-            </div>
-        </div>
-        
+                    <!--End pet selection division -->
 
-        <!--hero/jumbotron-->
-        <section class="hero is-warning">
-            <div class="hero-body">
-              <p class="title">
-                  Find your Furever Friend
-                </p>
-           
-            </div>
-          </section>
+                    <!-- Gender, Age, Size and Stalled labor selections  -->
+                    <div class="block">
 
-          <!--About us us-->
-          <div class="block">
-              <article class="message is-success">
-                  <div class="message-header">
-                      <p>About us here at The Shelter Stop</p>
-                  </div>
-                  <div class="message-body">
-                      Hey yall ! not really sure what to put here lol if anyone has something nice they wanna share that would be great ! Im not the best with words lmao. Thanks and happy coding  
-                  </div>
-              </article>
-          </div>
+                        <!-- Gender -->
+                        <div>
+                            <h2 class="subtitle">Sex</h2>
+                        </div>
+                        <div class="select is-rounded">
+
+                            <select id="dropdownGender">
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="">No preference</option>
+                            </select>
+                        </div>
+
+                        <!-- Size -->
+                        <div>
+                            <h2 class="subtitle">Size</h2>
+                        </div>
+                        <div class="select is-rounded">
+                            <select id="dropdownSize">
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                                <option value="xlarge">XLarge</option>
+                                <option value="">No preference</option>
+                            </select>
+                        </div>
 
           <!--This is a test-->
 
+<<<<<<< HEAD
 
              <!---THIS CAN BE CHANGED TO A MAP MAYBE??-->
            <div class="block">
@@ -81,44 +148,120 @@
             </p>
         </div>      
         </section>
+=======
+                        <!-- Age -->
+                        <div>
+                            <h2 class="subtitle">Age</h2>
+                        </div>
+                        <div class="select is-rounded">
+                            <select id="dropdownAge">
+                                <option value="baby">Baby</option>
+                                <option value="young">Young</option>
+                                <option value="adult">Adult</option>
+                                <option value="senior">Senior</option>
+                                <option value="">No preference</option>
+                            </select>
+                        </div>
 
+                        <!--added house trained drop down-->
+                        <div>
+                            <h2 class="subtitle">House-trained?</h2>
+                        </div>
+                        <div class="select is-rounded">
+                            <select id="dropdownHT">
+                                <option value="false">Not a problem</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <!--added special needs drop down-->
+                        <div>
+                            <h2 class="subtitle">Special needs?</h2>
+                        </div>
+                        <div class="select is-rounded">
+                            <select id="dropdownSN">
+                                <option value="false">Prefer none</option>
+                                <option value="true">Special needs welcomed</option>
+                            </select>
+                        </div>
+                        <div>
+                            <h2 class="subtitle">Enter Zip Code:</h2>
+                        </div>
+                        <input type="tel" placeholder="Enter Zip Code" name="phone" id="zipCode"
+                            class="input zipinput is-rounded" />
+                    </div>
+
+>>>>>>> develop
+
+                    <button class="button is-success is-small is-outlined" id="submit-button">Find my Furever
+                        Friend</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--About Us-->
+    <div class="block" id="about-us">
+        <article class="message is-success">
+            <div class="message-header">
+                <p>About Us Here at The Shelter Stop</p>
+            </div>
+            <div class="message-body">
+                The Shelter Stop was created to increase views of adoptable pets, in order to maximize the rehoming rates of those friends in need. 
+                <br/>
+                When searching for a new pet, it's important to find your perfect match, but what if that perfect match isn't showing on one site? Or in one shelter? 
+                <br/>
+                That's where The Shelter Stop comes in. 
+                <br/>
+                By pulling adoptable pets from multiple locations, we provide a one stop shop that will help ensure no friend in need is overlooked. We hope we can help you find your furever friend, wherever they may be.
+            </div>
+        </article>
+    </div>
+
+
+    </section>
+
+
+    <p>
+        <!--ABOUT US INFORMATION-->
+    </p>
+    </div>
+    </section>
+
+
+    <!--CONTACT US SECTION???-->
+    <section>
+        <div>
+            <h2>Reach Out</h2>
+        </div>
+        <div>
+            <div>
+                <h3>The Shelter Stop</h3>
+
+            </div>
+        </div>
         <!--DISPLAYING THE ADOPTABLE PETS-->
         <section>
-    
-        <div>
-            <!--This section needs to be dynamically created to show up to date adoptable pets-->
-        </div>
-        </section>
-
-        <!--CONTACT US SECTION???-->
-        <section>
-        <div>   
-            <h2>Reach Out</h2>
-        </div>     
+            <h1 class=title>Your forever friends:</h1>
             <div>
+                <!--This section needs to be dynamically created to show up to date adoptable pets-->
                 <div>
+<<<<<<< HEAD
                     <h3>The Shelter Stop</h3>
+=======
+>>>>>>> develop
                     
-                      </div>    
                 </div>
-
-                <div>
-                    <h3>Contact Us</h3>
-                    <form>
-                        <label for="contact-name">Your Name</label>
-                        <input type="text" id="contact-name" placeholder="Your Name" />
-
-                        <label for="contact-message">Message</label>
-                        <textarea id="contact-message" placeholder="Message"></textarea>
-
-                        <button class="button is-black">Submit</button>
-
-                    </form>
-                </div>
-                
             </div>
         </section>
+        <div>
+            <h3 id="#contact">Contact Us</h3>
+            <form>
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" placeholder="Your Name" />
 
+<<<<<<< HEAD
     
         <!--Footer-->
         
@@ -130,16 +273,74 @@
                     &copy; 2022 The Shelter Stop
                 </div>
               </p>
+=======
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" placeholder="Message"></textarea>
+
+                <button class="button is-black">Submit</button>
+
+            </form>
+        </div>
+
+        </div>
+    </section>
+
+    <!--Credits-->
+
+    <div class="credits">
+        <button class="button btn-credits">
+            Credits
+            <a href="https://www.flaticon.com/free-icons/cat" title="cat icons">Cat icons created by Freepik -
+                Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/bird" title="bird icons">Bird icons created by Freepik -
+                Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/pet-shop" title="pet shop icons">Pet shop icons created by
+                Freepik - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/dog" title="dog icons">Dog icons created by Freepik -
+                Flaticon</a>
+        </button>
+
+    </div>
+
+    <!--Footer-->
+
+    <footer class="footer">
+        <!-- Added map to footer: -->
+        <div class="is-warning" id='map'>
+            <div class="formBlock">
+                <form id="form">
+                    <!-- WILL NEED TO DELETE THIS INPUT AND CHANGE TO CLICK READER IN JS, JUST A PLACEHOLDER FOR NOW: -->
+                    <input type="text" name="end" class="input" id="destination" placeholder="Choose end point" />
+                    <button style="display: none;" type="submit">Get Directions</button>
+                </form>
+>>>>>>> develop
             </div>
-        </footer>
-        <!-- HTTP request library -->
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <!-- Software development kit for petfinder -->
-        <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
-        <!-- Jquery link -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <!-- Linked js to HTML -->
-        <script src="./assets/js/script.js"></script>
-    </body>
+        </div>
+        <div class="content has-text-centered">
+            <p>
+                <strong>❤️ The Shelter Stop</strong> made by
+            <div> Amazing Giraffes </div>
+            <div>
+                &copy; 2022 The Shelter Stop
+            </div>
+            </p>
+        </div>
+    </footer>
+    <!-- HTTP request library -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Software development kit for petfinder -->
+    <script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
+    <!-- Jquery link -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- Links the leaflet map API -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <!-- API links for leaflet addons -->
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=S8d7L47mdyAG5nHG09dUnSPJjreUVPeC"></script>
+    <script
+        src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=S8d7L47mdyAG5nHG09dUnSPJjreUVPeC"></script>
+    <!-- Linked js to HTML -->
+    <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
