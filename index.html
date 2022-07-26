@@ -40,6 +40,7 @@
                     Find your Furever Friend
                 </p>
                 <div class="box zip-btn is-flex">
+<<<<<<< HEAD
                 
                     <!-- User pet selection -->
                     <div class="block is-flex-direction-row">
@@ -59,19 +60,52 @@
                                     <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white"
                                         class="user-pet-choice" />
                                     <input type="radio" name="pet" value="cat"> Cats
+=======
+
+                    <!-- User pet selection -->
+                    <div class="block is-flex-direction-row">
+                        <div class="control">
+                            <!-- Dog selection -->
+                            <label class="radio" id="dogCheckbox">
+                                <figure class="button is-small is-white image is-128x128">
+                                    <img src="./assets/images/pet.png" alt="dog icon white with brown"
+                                        class="user-pet-choice" />
+                                    <input onclick="getRadioValue()" type="radio" id="Dogs" name="question" value="Dog">
+                                    Dogs
+                                </figure>
+                            </label>
+
+                            <!-- Cat selection -->
+                            <label class="radio" id="catCheckbox">
+                                <figure class="button is-small is-white image is-128x128">
+                                    <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white"
+                                        class="user-pet-choice" />
+                                    <input onclick="getRadioValue()" type="radio" id="Cats" name="question" value="Cat">
+                                    Cats
+>>>>>>> develop
                                 </figure>
                             </label>
 
                             <!-- Bird selection -->
+<<<<<<< HEAD
                             <label class="radio">
                                 <figure class="button is-small is-white image is-128x128">
                                     <img src="./assets/images/bird.png" alt="Bird icon white with brown"
                                         class="user-pet-choice" />
                                     <input type="radio" name="pet" value="bird"> Birds
+=======
+                            <label class="radio" id="birdCheckbox">
+                                <figure class="button is-small is-white image is-128x128">
+                                    <img src="./assets/images/bird.png" alt="Bird icon white with brown"
+                                        class="user-pet-choice" />
+                                    <input onclick="getRadioValue()" type="radio" id="Birds" name="question"
+                                        value="Bird"> Birds
+>>>>>>> develop
                                 </figure>
                             </label>
 
                             <!-- Others selection -->
+<<<<<<< HEAD
                             <label class="radio">
                                 <figure class="button is-small is-white image is-128x128">
                                     <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown"
@@ -79,6 +113,17 @@
                                     <input type="radio" name="pet" value="allpets"> All Pets
                                 </figure>
                             </label>
+=======
+                            <label class="radio" id="othersCheckbox">
+                                <figure class="button is-small is-white image is-128x128">
+                                    <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown"
+                                        class="user-pet-choice" />
+                                    <input onclick="getRadioValue()" type="radio" id="undefined" name="question"
+                                        value=""> All Pets
+                                </figure>
+                            </label>
+                            <p id="result"></p>
+>>>>>>> develop
                         </div>
                     </div>
                     <!--End pet selection division -->
@@ -88,6 +133,7 @@
 
                         <!-- Gender -->
                         <div>
+<<<<<<< HEAD
                         <h2 class = "subtitle">Sex</h2>
                         </div>
                         <div class="select is-rounded" >
@@ -137,12 +183,81 @@
                         </div>
                         <div>
                             <h2 class = "subtitle">Enter Zip Code:</h2>
+=======
+                            <h2 class="subtitle">Sex</h2>
+                        </div>
+                        <div class="select is-rounded">
+
+                            <select id="dropdownGender">
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="">No preference</option>
+                            </select>
+                        </div>
+
+                        <!-- Size -->
+                        <div>
+                            <h2 class="subtitle">Size</h2>
+                        </div>
+                        <div class="select is-rounded">
+                            <select id="dropdownSize">
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                                <option value="xlarge">XLarge</option>
+                                <option value="">No preference</option>
+                            </select>
+                        </div>
+
+
+                        <!-- Age -->
+                        <div>
+                            <h2 class="subtitle">Age</h2>
+                        </div>
+                        <div class="select is-rounded">
+                            <select id="dropdownAge">
+                                <option value="baby">Baby</option>
+                                <option value="young">Young</option>
+                                <option value="adult">Adult</option>
+                                <option value="senior">Senior</option>
+                                <option value="">No preference</option>
+                            </select>
+                        </div>
+
+                        <!--added house trained drop down-->
+                        <div>
+                            <h2 class="subtitle">House-trained?</h2>
+                        </div>
+                        <div class="select is-rounded">
+                            <select id="dropdownHT">
+                                <option value="false">Not a problem</option>
+                                <option value="true">Yes</option>
+                            </select>
+                        </div>
+                        <!--added special needs drop down-->
+                        <div>
+                            <h2 class="subtitle">Special needs?</h2>
+                        </div>
+                        <div class="select is-rounded">
+                            <select id="dropdownSN">
+                                <option value="false">Prefer none</option>
+                                <option value="true">Special needs welcomed</option>
+                            </select>
+                        </div>
+                        <div>
+                            <h2 class="subtitle">Enter Zip Code:</h2>
+>>>>>>> develop
                         </div>
                         <input type="tel" placeholder="Enter Zip Code" name="phone" id="zipCode"
                             class="input zipinput is-rounded" />
                     </div>
+<<<<<<< HEAD
                 
                 
+=======
+
+
+>>>>>>> develop
                     <button class="button is-success is-small is-outlined" id="submit-button">Find my Furever
                         Friend</button>
                 </div>
