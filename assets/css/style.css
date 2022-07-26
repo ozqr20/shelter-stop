@@ -126,6 +126,7 @@ footer a {
     padding: 150px;
 }
 
+
 .hero-cta {
     width: 35%;
     text-align: right;
@@ -143,6 +144,23 @@ footer a {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 /*Hero Section Styling Ends*/
+=======
+.pet-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    align-items: flex-start;
+}
+
+.pet-container > .card {
+    max-width: 30rem;
+}
+.pet-image {
+    max-height: 30rem;
+}
+/* Styling for map below */
+
 
 /*----------------------------------------------------------*/
 
