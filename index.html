@@ -42,53 +42,57 @@
                 <div class="box zip-btn is-flex">
                     
                         <!-- User pet selection -->
-                        <div class="block is-flex-direction-row">
-                            <div class="control">
-                                <!-- Dog selection -->
-                                <label class="radio" id="dogCheckbox">
-                                    <figure class="button is-small is-white image is-128x128">
-                                        <img src="./assets/images/pet.png" alt="dog icon white with brown"
-                                            class="user-pet-choice" />
-                                        <input type="radio" name="question"> Dogs
-                                    </figure>
-                                </label>
+                        
 
-                                <!-- Cat selection -->
-                                <label class="radio" id="catCheckbox">
-                                    <figure class="button is-small is-white image is-128x128">
-                                        <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white"
-                                            class="user-pet-choice" />
-                                        <input type="radio" name="question"> Cats
-                                    </figure>
-                                </label>
-
-                                <!-- Bird selection -->
-                                <label class="radio" id="birdCheckbox">
-                                    <figure class="button is-small is-white image is-128x128">
-                                        <img src="./assets/images/bird.png" alt="Bird icon white with brown"
-                                            class="user-pet-choice" />
-                                        <input type="radio" name="question"> Birds
-                                    </figure>
-                                </label>
-
-                                <!-- Others selection -->
-                                <label class="radio" id="othersCheckbox">
-                                    <figure class="button is-small is-white image is-128x128">
-                                        <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown"
-                                            class="user-pet-choice" />
-                                        <input type="radio" name="question"> All Pets
-                                    </figure>
-                                </label>
+                        
+                        <div class="block">
+                            <div class="block is-flex-direction-row">
+                                <div class="control" id="petType">
+                                    <!-- Dog selection -->
+                                    <label class="radio" >
+                                        <figure class="button is-small is-white image is-128x128">
+                                            <img src="./assets/images/pet.png" alt="dog icon white with brown"
+                                                class="user-pet-choice" />
+                                            <input type="radio" name="typePet" value="dog" id="dog"> Dogs
+                                        </figure>
+                                    </label>
+    
+                                    <!-- Cat selection -->
+                                    <label class="radio">
+                                        <figure class="button is-small is-white image is-128x128">
+                                            <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white"
+                                                class="user-pet-choice" />
+                                            <input type="radio" name="typePet" value="cat" id="cat"> Cats
+                                        </figure>
+                                    </label>
+    
+                                    <!-- Bird selection -->
+                                    <label class="radio">
+                                        <figure class="button is-small is-white image is-128x128">
+                                            <img src="./assets/images/bird.png" alt="Bird icon white with brown"
+                                                class="user-pet-choice" />
+                                            <input type="radio" name="typePet" value="bird" id="bird"> Birds
+                                        </figure>
+                                    </label>
+    
+                                    <!-- Others selection -->
+                                    <label class="radio">
+                                        <figure class="button is-small is-white image is-128x128">
+                                            <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown"
+                                                class="user-pet-choice" />
+                                            <input type="radio" name="typePet" value="allpets" id="undefined"> All Pets
+                                        </figure>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                        <!--End pet selection division -->
+                            <!--End pet selection division -->
 
-                        <!-- Gender, Age, Size and Stalled labor selections  -->
-                        <div class="block">
+                            <!-- Gender, Age, Size and Stalled labor selections  -->
 
                             <!-- Gender -->
                             <div>
-                            <h2 class = "subtitle">Sex</h2>
+                                <h2 class = "subtitle">Sex</h2>
                             </div>
                             <div class="select is-rounded" >
                                 
@@ -127,8 +131,8 @@
 
                             <!--Spayed/Neutered-->
                             <div>
-                                <h2 class = "subtitle">Spayed / Neutered</h2>
-                                </div>
+                            <h2 class = "subtitle">Spayed / Neutered</h2>
+                            </div>
                             <div class="select is-rounded">
                                 <select id="dropdownNeutered">
                                     <option value="false">No</option>
@@ -143,8 +147,8 @@
                         </div>
                     
                     
-                    <button class="button is-success is-small is-outlined" id="submit-button">Find my Furever
-                        Friend</button>
+                            <button class="button is-success is-small is-outlined" id="submit-button">Find my Furever
+                                Friend</button>
                 </div>
             </div>
         </div>
