@@ -12,7 +12,7 @@ const key = "yU3oem5LTLC04KuehXub1betrxaHobbODTgGpASsVR3IGZ0mXt";
 const secret = "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp";
 
 
-var pf = new petfinder.Client({apiKey: "yU3oem5LTLC04KuehXub1betrxaHobbODTgGpASsVR3IGZ0mXt", secret: "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp"});
+var pf = new petfinder.Client({ apiKey: "yU3oem5LTLC04KuehXub1betrxaHobbODTgGpASsVR3IGZ0mXt", secret: "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp" });
 
 //Created function for selecting the radio value
 var radioValue = undefined;
@@ -21,13 +21,13 @@ function getRadioValue() {
     //select the radio name
     var radio = document.getElementsByName('question');
     //go through a for loop of the radio inputs and determine which is checked
-    for(i=0; i < radio.length; i++) {
+    for (i = 0; i < radio.length; i++) {
         //store the index value of the checked (selected) radio
-        if(radio[i].checked) {
+        if (radio[i].checked) {
             //console logs the value of either cats, dogs, birds, or "" if unselected. "" is necessary for the api function to work.
-        console.log("Type selected: " + radio[i].value + "!");
-        //radio value becomes the index value for use outside of this function, for the api function below.
-        radioValue = radio[i].value;
+            console.log("Type selected: " + radio[i].value + "!");
+            //radio value becomes the index value for use outside of this function, for the api function below.
+            radioValue = radio[i].value;
         }
     }
 }
@@ -37,7 +37,7 @@ function getRadioValue() {
 async function showAnimals(animalType, sexType, sizeType, ageType, house_trainedType, special_needsType, location) {
     //Show first page of pets
     let page = 1;
-    
+
     //So far this will show results based on type, breed, and location
     apiResult = await pf.animal.search({
         type: animalType,
@@ -48,38 +48,72 @@ async function showAnimals(animalType, sexType, sizeType, ageType, house_trained
         special_needs: special_needsType,
         location,
         page,
-        limit: 1,
+        limit: 2,
     });
-    let Idx = (page - 1) * 1;
-    apiResult.data.animals.forEach(function(animal) {
+    let Idx = (page - 1) * 2;
+    apiResult.data.animals.forEach(function (animal) {
         console.log(` -- ${++Idx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
     });
-    }
+    return apiResult.data.animals
+}
 
-    // This implementation did not work 
-    // $(document).ready(function(){
-    //     $("input[type='submit-button']").click(function(){
-    //         var radioValue = $("input[name='type']:checked").val();
-    //         if(radioValue){
-    //             console.log(radioValue)
-    //         }
-    //     })
-    // })
+// This implementation did not work 
+// $(document).ready(function(){
+//     $("input[type='submit-button']").click(function(){
+//         var radioValue = $("input[name='type']:checked").val();
+//         if(radioValue){
+//             console.log(radioValue)
+//         }
+//     })
+// })
 
-    async function pullpets() {
+async function pullpets() {
     //currently this function only shows dogs in the 32219 florida zip code
 
-    await showAnimals(radioValue,$("#dropdownGender").val(),$("#dropdownSize").val(),$("#dropdownAge").val(),$("#dropdownHT").val(),$("#dropdownSN").val(),$("#zipCode").val(),);
+    const animals = await showAnimals(radioValue, $("#dropdownGender").val(), $("#dropdownSize").val(), $("#dropdownAge").val(), $("#dropdownHT").val(), $("#dropdownSN").val(), $("#zipCode").val(),);
     console.log("Showing results for:")
     console.log($("#dropdownGender").val());
     console.log($("#dropdownSize").val());
     console.log($("#dropdownAge").val());
-    console.log("Housetrained: "+$("#dropdownHT").val());
-    console.log("Special needs: "+$("#dropdownSN").val());
+    console.log("Housetrained: " + $("#dropdownHT").val());
+    console.log("Special needs: " + $("#dropdownSN").val());
     console.log($("#zipCode").val());
-    }
 
-submitButton.addEventListener('click',pullpets);
+    $(".pet-card").each(function (index) {
+        this.classList.remove("is-hidden");
+    });
+
+    $(".pet-image").each(function (index) {
+        this.src = animals[index].photos[0].medium
+    });
+
+    $(".pet-name").each(function (index) {
+        this.textContent = animals[index].name
+    });
+
+    $(".pet-description").each(function (index) {
+        this.textContent = animals[index].description || "No description available"
+    });
+
+    $(".pet-url").each(function (index) {
+        this.href = animals[index].url
+    });
+
+    $(".get-direction").each(function (index) {
+        this.onclick = function (event) {
+            const address = animals[index].contact.address
+            let search = address.address1
+            if (address.address2)
+                search += ", " + address.address2;
+            search += " " + address.city + ", " + address.state + " " + address.postcode
+            document.getElementById("destination").value = search;
+            submitForm(event);
+        }
+    });
+}
+
+submitButton.addEventListener('click', pullpets);
+
 
 
 //!//
@@ -95,64 +129,64 @@ let map = L.map('map', {
     center: [28.5384, -81.3789],
     zoom: 12
 });
-    function runDirection(start, end) {
-        
-        //recreating new map layer after removal
-        map = L.map('map', {
-            layers: MQ.mapLayer(),
-            center: [28.5384, -81.3789],
-            zoom: 12
-        });
-        
-        var dir = MQ.routing.directions();
+function runDirection(start, end) {
 
-        dir.route({
-            locations: [
-                start,
-                end
-            ]
-        });
-    
+    //recreating new map layer after removal
+    map = L.map('map', {
+        layers: MQ.mapLayer(),
+        center: [28.5384, -81.3789],
+        zoom: 12
+    });
 
-        CustomRouteLayer = MQ.Routing.RouteLayer.extend({
-            createStartMarker: (location) => {
-                var custom_icon;
-                var marker;
+    var dir = MQ.routing.directions();
 
-                custom_icon = L.icon({
-                    iconUrl: './assets/images/red.png',
-                    iconSize: [20, 29],
-                    iconAnchor: [10, 29],
-                    popupAnchor: [0, -29]
-                });
+    dir.route({
+        locations: [
+            start,
+            end
+        ]
+    });
 
-                marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map);
 
-                return marker;
-            },
+    CustomRouteLayer = MQ.Routing.RouteLayer.extend({
+        createStartMarker: (location) => {
+            var custom_icon;
+            var marker;
 
-            createEndMarker: (location) => {
-                var custom_icon;
-                var marker;
-                //Use blue marker image for destination
-                custom_icon = L.icon({
-                    iconUrl: './assets/images/blue.png',
-                    iconSize: [20, 29],
-                    iconAnchor: [10, 29],
-                    popupAnchor: [0, -29]
-                });
+            custom_icon = L.icon({
+                iconUrl: './assets/images/red.png',
+                iconSize: [20, 29],
+                iconAnchor: [10, 29],
+                popupAnchor: [0, -29]
+            });
 
-                marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map);
+            marker = L.marker(location.latLng, { icon: custom_icon }).addTo(map);
 
-                return marker;
-            }
-        });
-        
-        map.addLayer(new CustomRouteLayer({
-            directions: dir,
-            fitBounds: true
-        })); 
-    }
+            return marker;
+        },
+
+        createEndMarker: (location) => {
+            var custom_icon;
+            var marker;
+            //Use blue marker image for destination
+            custom_icon = L.icon({
+                iconUrl: './assets/images/blue.png',
+                iconSize: [20, 29],
+                iconAnchor: [10, 29],
+                popupAnchor: [0, -29]
+            });
+
+            marker = L.marker(location.latLng, { icon: custom_icon }).addTo(map);
+
+            return marker;
+        }
+    });
+
+    map.addLayer(new CustomRouteLayer({
+        directions: dir,
+        fitBounds: true
+    }));
+}
 
 //Function that runs when form is submitted
 function submitForm(event) {
