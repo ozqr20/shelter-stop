@@ -48,9 +48,9 @@ async function showAnimals(animalType, sexType, sizeType, ageType, house_trained
         special_needs: special_needsType,
         location,
         page,
-        limit: 12,
+        limit: 2,
     });
-    let Idx = (page - 1) * 12;
+    let Idx = (page - 1) * 2;
     apiResult.data.animals.forEach(function (animal) {
         console.log(` -- ${++Idx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
     });
