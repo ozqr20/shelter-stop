@@ -77,7 +77,7 @@ async function pullpets() {
 
     //for each pet indexed in the network tab, show the 0th medium sized photo for the pet provided on the page
     $(".pet-image").each(function (index) {
-        this.src = animals[index].photos[0].medium
+        this.src = animals[index].photos[0]?.medium || ""
     });
     //for each pet indexed, show the name for the class of the pet-name in the pet-name's card
     $(".pet-name").each(function (index) {
