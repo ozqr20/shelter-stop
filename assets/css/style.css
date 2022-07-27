@@ -206,13 +206,7 @@ footer a {
 /*----------------------------------------------------------*/
 
 /* Style Map Section*/
-.map{
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+
 /*Map Styling Ends*/
 
 /*----------------------------------------------------------*/
@@ -429,4 +423,20 @@ footer a {
     .contact-form {
         order: 3;
     }
+}
+
+.leaflet-top .leaflet-control {
+    margin-top: 180px;
+}
+
+.input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+input:nth-child(1) {
+    margin-bottom: 0px;
 }

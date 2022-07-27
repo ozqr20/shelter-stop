@@ -93,9 +93,9 @@
     <!--** I NEED HELP GETTING THIS TO DISPLAY PROPERLY-->
 
     <!--Display Adoptable Pets Section-->
-    <section id="pet-search" class="steps">
+    <!-- <section id="pet-search" class="steps">
         <div class="flex-row">
-            <h2 class="section-title primary-border">Adoptable Pet Search</h2>
+            <h2 class="section-title primary-border">Adoptable Pet Search</h2> -->
 
             <article class="search-content">
                 <div class="box zip-btn is-flex">
@@ -218,19 +218,62 @@
                         Friend</button>
                 </div>
             </article>
+            <section>
+                <h1 class=title>Your forever friends:</h1>
+                <div class="pet-container">
+                    <!--This section needs to be dynamically created to show up to date adoptable pets-->
+                    <div class="card pet-card is-hidden">
+                        <div class="card-image">
+                            <figure class="image is-4x3">
+                                <img class="pet-image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h3 class="pet-name"></h3>
+                                <h6>Pet description:</h6>
+                                <p class="pet-description"></p>
+                                <a class="pet-url" href="#">Get details</a>
+                                <br>
+                                <button class="button get-direction">Get directions</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card pet-card is-hidden">
+                        <div class="card-image">
+                            <figure class="image is-4x3">
+                                <img class="pet-image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h3 class="pet-name"></h3>
+                                <h6>Pet description:</h6>
+                                <p class="pet-description"></p>
+                                <a class="pet-url" href="#">Get details</a>
+                                <br>
+                                <button class="button get-direction">Get directions</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <!--Map Section-->
             <section id="locate-search">
                 <div class="flex-row">
                     <h2 class="section-title primary-border">Locate Your ********</h2>
                 </div>
-            </section>
-        </div>
-    </section>
-            <section id="locate-search">
-                <div class="flex-row">
-                    <h2 class="section-title primary-border">Locate Your ********</h2>
+            </section><!-- Added map to footer: -->
+                <div class="is-warning" id='map'>
+                    <div>
+                        <form id="form">
+                            <!-- this is just a place holder for the map to work in the JS -->
+                            <input type="text" name="end" class="input" id="destination" />
+                        </form>
+                    </div>
                 </div>
-            </section>
+        <!-- </div>
+    </section> -->
 
     <!--CONTACT US SECTION???-->
     <section>
@@ -320,21 +363,9 @@
     </section>
 
     <!--footer-->
+    <footer class="footer">
         <h2> 🐾 Made with love by Amazing Giraffes</h2>
             &copy; 2022 The Shelter Stop
-
-            <footer class="footer">
-                <!-- Added map to footer: -->
-                <div class="is-warning" id='map'>
-                    <div>
-                        <form id="form">
-                            <!-- this is just a place holder for the map to work in the JS -->
-                            <input type="text" name="end" class="input" id="destination" />
-
-                        </form>
-                    </div>
-                </div>
             </footer>
 </body>
-
 </html>
