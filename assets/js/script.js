@@ -1,10 +1,6 @@
 // Variables (currently unused)
 const pets = [];
-var petSearchEl = document.getElementById("#petSearch");
-var inputSearchEl = document.getElementById("#input-search");
-var dropDownEl = document.getElementById("#dropdown");
 const submitButton = document.getElementById('submit-button');
-
 
 
 //Test to see if JS is being read
@@ -18,8 +14,27 @@ const secret = "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp";
 
 var pf = new petfinder.Client({apiKey: "yU3oem5LTLC04KuehXub1betrxaHobbODTgGpASsVR3IGZ0mXt", secret: "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp"});
 
+//Created function for selecting the radio value
+var radioValue = undefined;
+
+function getRadioValue() {
+    //select the radio name
+    var radio = document.getElementsByName('question');
+    //go through a for loop of the radio inputs and determine which is checked
+    for(i=0; i < radio.length; i++) {
+        //store the index value of the checked (selected) radio
+        if(radio[i].checked) {
+            //console logs the value of either cats, dogs, birds, or "" if unselected. "" is necessary for the api function to work.
+        console.log("Type selected: " + radio[i].value + "!");
+        //radio value becomes the index value for use outside of this function, for the api function below.
+        radioValue = radio[i].value;
+        }
+    }
+}
+
+
 //asyncronous function provided by SDK
-async function showAnimals(animalType, sexType, sizeType, ageType, location) {
+async function showAnimals(animalType, sexType, sizeType, ageType, house_trainedType, special_needsType, location) {
     //Show first page of pets
     let page = 1;
     
@@ -29,6 +44,8 @@ async function showAnimals(animalType, sexType, sizeType, ageType, location) {
         sex: sexType,
         size: sizeType,
         age: ageType,
+        house_trained: house_trainedType,
+        special_needs: special_needsType,
         location,
         page,
         limit: 1,
@@ -38,16 +55,27 @@ async function showAnimals(animalType, sexType, sizeType, ageType, location) {
         console.log(` -- ${++Idx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
     });
     }
-    
+
+    // This implementation did not work 
+    // $(document).ready(function(){
+    //     $("input[type='submit-button']").click(function(){
+    //         var radioValue = $("input[name='type']:checked").val();
+    //         if(radioValue){
+    //             console.log(radioValue)
+    //         }
+    //     })
+    // })
+
     async function pullpets() {
     //currently this function only shows dogs in the 32219 florida zip code
 
-    await showAnimals("Cat",$("#dropdownGender").val(),$("#dropdownSize").val(),$("#dropdownAge").val(),$("#zipCode").val(),);
+    await showAnimals(radioValue,$("#dropdownGender").val(),$("#dropdownSize").val(),$("#dropdownAge").val(),$("#dropdownHT").val(),$("#dropdownSN").val(),$("#zipCode").val(),);
     console.log("Showing results for:")
     console.log($("#dropdownGender").val());
     console.log($("#dropdownSize").val());
     console.log($("#dropdownAge").val());
-    console.log("Spayed/Neutered: "+$("#dropdownNeutered").val());
+    console.log("Housetrained: "+$("#dropdownHT").val());
+    console.log("Special needs: "+$("#dropdownSN").val());
     console.log($("#zipCode").val());
     }
 
