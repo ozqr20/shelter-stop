@@ -1,225 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>The Shelter Stop</title>
-        <link rel="stylesheet" href="" />
-        <!--LINK CSS-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- Leaflet map css -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
-        <link rel="stylesheet" href="./assets/css/style.css" />
-    </head>
-
-    <!--Main Content-->
-    <body>
-    
-        <!--Header-->
-        <header>
-             <h1>
-                <a href="/">The Shelter Stop</a>
-             </h1>
-
-             <!--Navigation-->
-             <nav>
-                 <ul>
-                     <li>
-                        <a href="#about-us">About Us</a>
-                     </li>
-                     <li>
-                        <a href="#pet-search">Pet Search</a>
-                     </li>
-                     <li>
-                        <a href="#locate-search">Location Search</a>
-                     </li>
-                     <li>
-                        <a href="#contact-us">Contact Us</a>
-                     </li>
-                 </ul>
-             </nav>
-        </header>
-
-        <!--Hero-->
-        <section class="hero">
-            <div class="hero-cta">
-                <h2>Find Your <br/>Furever Friend</h2>
-                <p>
-                    Did you know millions of dogs are sent to animal shelters every year? But, thanks to people like you, that number is slowly declining. Adoptable pets are extremely unique. Breeds, ages, sizing, and levels of training all vary, so there are lots to choose from. 
-                    <br/>
-                    Let The Shelter Stop find your perfect match.
-                    <br/>
-                    <br/>
-                    P.S. Did you know that studies show that owning a dog can help you live longer? So, not only will you be saving a life, you'll be enhancing your own!
-                </p>
-            </div>
-        </section>
-        
-
-        <!--About Us Section-->
-        <section id="about-us" class="intro">
-            <div class="flex-row">
-                <h2 class="section-title secondary-border">About The Shelter Stop</h2>
-            </div>    
-            <div class="flex row">  
-                <p>
-                The Shelter Stop was created to increase views of adoptable pets, in order to maximize the rehoming rates of those friends in need. 
-                <br/>
-                When searching for a new pet, it's important to find your perfect match, but what if that perfect match isn't showing on one site? Or in one shelter? 
-                <br/>
-                That's where The Shelter Stop comes in. 
-                <br/>
-                By pulling adoptable pets from multiple locations, we provide a one stop shop that will help ensure no friend in need is overlooked. We hope we can help you find your furever friend, wherever they may be.
-                </p>
-            </div>      
-        </section>
-
-
-
-        <!--** I NEED HELP GETTING THIS TO DISPLAY PROPERLY-->
-
-        <!--Display Adoptable Pets Section-->
-        <section id="pet-search" class="steps">
-            <div class="flex-row">
-                <h2 class="section-title primary-border">Adoptable Pet Search</h2>
-            
-                <article class="search-content">
-                    <div class="box zip-btn is-flex">
-                            
-                        <!-- User pet selection -->
-                        <div class="block is-flex-direction-row">
-                            <div class="control">
-                                <!-- Dog selection -->
-                                <label class="radio" id="dogCheckbox">
-                                    <figure class="button is-small is-white image is-128x128">
-                                        <img src="./assets/images/pet.png" alt="dog icon white with brown"
-                                            class="user-pet-choice" />
-                                        <input onclick="getRadioValue()" type="radio" id="Dogs" name="question" value="Dog">
-                                        Dogs
-                                    </figure>
-                                </label>
-    
-                                <!-- Cat selection -->
-                                <label class="radio" id="catCheckbox">
-                                    <figure class="button is-small is-white image is-128x128">
-                                        <img src="./assets/images/cat.png" alt="cat icon  yellow, orange and white"
-                                            class="user-pet-choice" />
-                                        <input onclick="getRadioValue()" type="radio" id="Cats" name="question" value="Cat">
-                                        Cats
-                                    </figure>
-                                </label>
-    
-                                <!-- Bird selection -->
-                                <label class="radio" id="birdCheckbox">
-                                    <figure class="button is-small is-white image is-128x128">
-                                        <img src="./assets/images/bird.png" alt="Bird icon white with brown"
-                                            class="user-pet-choice" />
-                                        <input onclick="getRadioValue()" type="radio" id="Birds" name="question"
-                                            value="Bird"> Birds
-                                    </figure>
-                                </label>
-    
-                                <!-- Others selection -->
-                                <label class="radio" id="othersCheckbox">
-                                    <figure class="button is-small is-white image is-128x128">
-                                        <img src="./assets/images/pet-shop.png" alt="Bird icon white with brown"
-                                            class="user-pet-choice" />
-                                        <input onclick="getRadioValue()" type="radio" id="undefined" name="question"
-                                            value=""> All Pets
-                                    </figure>
-                                </label>
-                                <p id="result"></p>
-                            </div>
-                        </div>
-                        <!--End pet selection division -->
-    
-                        <!-- Gender, Age, Size and Stalled labor selections  -->
-                        <div class="block">
-    
-                            <!-- Gender -->
-                            <div>
-                                <h2 class="subtitle">Sex</h2>
-                            </div>
-                            <div class="select is-rounded">
-    
-                                <select id="dropdownGender">
-                                    <option value="female">Female</option>
-                                    <option value="male">Male</option>
-                                    <option value="">No Preference</option>
-                                </select>
-                            </div>
-    
-                            <!-- Size -->
-                            <div>
-                                <h2 class="subtitle">Size</h2>
-                            </div>
-                            <div class="select is-rounded">
-                                <select id="dropdownSize">
-                                    <option value="small">Small</option>
-                                    <option value="medium">Medium</option>
-                                    <option value="large">Large</option>
-                                    <option value="xlarge">X-Large</option>
-                                    <option value="">No Preference</option>
-                                </select>
-                            </div>
-    
-    
-                            <!-- Age -->
-                            <div>
-                                <h2 class="subtitle">Age</h2>
-                            </div>
-                            <div class="select is-rounded">
-                                <select id="dropdownAge">
-                                    <option value="baby">Baby</option>
-                                    <option value="young">Young</option>
-                                    <option value="adult">Adult</option>
-                                    <option value="senior">Senior</option>
-                                    <option value="">No Preference</option>
-                                </select>
-                            </div>
-    
-                            <!--added house trained drop down-->
-                            <div>
-                                <h2 class="subtitle">House-trained?</h2>
-                            </div>
-                            <div class="select is-rounded">
-                                <select id="dropdownHT">
-                                    <option value="false">Not A Problem</option>
-                                    <option value="true">Yes</option>
-                                </select>
-                            </div>
-                            <!--added special needs drop down-->
-                            <div>
-                                <h2 class="subtitle">Special needs?</h2>
-                            </div>
-                            <div class="select is-rounded">
-                                <select id="dropdownSN">
-                                    <option value="false">Prefer None</option>
-                                    <option value="true">Special Needs Welcomed</option>
-                                </select>
-                            </div>
-                            <div>
-                                <h2 class="subtitle">Enter Zip Code:</h2>
-                            </div>
-                            <input type="tel" placeholder="Enter Zip Code" name="phone" id="zipCode"
-                                class="input zipinput is-rounded" />
-                        </div>
-    
-    
-                        <button class="button is-success is-small is-outlined" id="submit-button">Find my Furever
-                            Friend</button>
-                    </div>
-                </article>
 
 <head>
     <meta charset="UTF-8" />
-    <title>The Shelter Shop</title>
+    <title>The Shelter Stop</title>
     <link rel="stylesheet" href="" />
     <!--LINK CSS-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -235,27 +19,86 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
-<body>
-    <header class="level mb-0">
+<!--Main Content-->
 
-        <h1 class="title is-vcentered">THE SHELTER STOP</h1>
+<body>
+
+    <!--Header-->
+    <header>
+        <h1>
+            <a href="/">The Shelter Stop</a>
+        </h1>
+
+        <!--Navigation-->
         <nav>
-            <ul class="level-item">
-                <a class="link is-info" href="#Home">Home</a>
-                <a class="link is-info" href="#about-us">About Us</a>
-                <a class="link is-info" href="#contact">Contact</a>
+            <ul>
+                <li>
+                    <a href="#about-us">About Us</a>
+                </li>
+                <li>
+                    <a href="#pet-search">Pet Search</a>
+                </li>
+                <li>
+                    <a href="#locate-search">Location Search</a>
+                </li>
+                <li>
+                    <a href="#contact-us">Contact Us</a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <!--hero/jumbotron-->
-    <section class="hero is-warning ">
-        <div class="hero-body">
-            <div class="block block-input">
-                <p class="title title-zip is-flex is-justify-content-center">
-                    Find Your Furever Friend
-                </p>
-                <div class="box zip-btn">
+    <!--Hero-->
+    <section class="hero">
+        <div class="hero-cta">
+            <h2>Find Your <br />Furever Friend</h2>
+            <p>
+                Did you know millions of dogs are sent to animal shelters every year? But, thanks to people like you,
+                that number is slowly declining. Adoptable pets are extremely unique. Breeds, ages, sizing, and levels
+                of training all vary, so there are lots to choose from.
+                <br />
+                Let The Shelter Stop find your perfect match.
+                <br />
+                <br />
+                P.S. Did you know that studies show that owning a dog can help you live longer? So, not only will you be
+                saving a life, you'll be enhancing your own!
+            </p>
+        </div>
+    </section>
+
+
+    <!--About Us Section-->
+    <section id="about-us" class="intro">
+        <div class="flex-row">
+            <h2 class="section-title secondary-border">About The Shelter Stop</h2>
+        </div>
+        <div class="flex row">
+            <p>
+                The Shelter Stop was created to increase views of adoptable pets, in order to maximize the rehoming
+                rates of those friends in need.
+                <br />
+                When searching for a new pet, it's important to find your perfect match, but what if that perfect match
+                isn't showing on one site? Or in one shelter?
+                <br />
+                That's where The Shelter Stop comes in.
+                <br />
+                By pulling adoptable pets from multiple locations, we provide a one stop shop that will help ensure no
+                friend in need is overlooked. We hope we can help you find your furever friend, wherever they may be.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!--** I NEED HELP GETTING THIS TO DISPLAY PROPERLY-->
+
+    <!--Display Adoptable Pets Section-->
+    <section id="pet-search" class="steps">
+        <div class="flex-row">
+            <h2 class="section-title primary-border">Adoptable Pet Search</h2>
+
+            <article class="search-content">
+                <div class="box zip-btn is-flex">
 
                     <!-- User pet selection -->
                     <div class="block is-flex-direction-row">
@@ -316,10 +159,9 @@
                             <select id="dropdownGender">
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
-                                <option value="">No preference</option>
+                                <option value="">No Preference</option>
                             </select>
                         </div>
-
                         <!-- Size -->
                         <div>
                             <h2 class="subtitle">Size</h2>
@@ -329,12 +171,10 @@
                                 <option value="small">Small</option>
                                 <option value="medium">Medium</option>
                                 <option value="large">Large</option>
-                                <option value="xlarge">XLarge</option>
-                                <option value="">No preference</option>
+                                <option value="xlarge">X-Large</option>
+                                <option value="">No Preference</option>
                             </select>
                         </div>
-
-
                         <!-- Age -->
                         <div>
                             <h2 class="subtitle">Age</h2>
@@ -345,17 +185,16 @@
                                 <option value="young">Young</option>
                                 <option value="adult">Adult</option>
                                 <option value="senior">Senior</option>
-                                <option value="">No preference</option>
+                                <option value="">No Preference</option>
                             </select>
                         </div>
-
                         <!--added house trained drop down-->
                         <div>
                             <h2 class="subtitle">House-trained?</h2>
                         </div>
                         <div class="select is-rounded">
                             <select id="dropdownHT">
-                                <option value="false">Not a problem</option>
+                                <option value="false">Not A Problem</option>
                                 <option value="true">Yes</option>
                             </select>
                         </div>
@@ -365,8 +204,8 @@
                         </div>
                         <div class="select is-rounded">
                             <select id="dropdownSN">
-                                <option value="false">Prefer none</option>
-                                <option value="true">Special needs welcomed</option>
+                                <option value="false">Prefer None</option>
+                                <option value="true">Special Needs Welcomed</option>
                             </select>
                         </div>
                         <div>
@@ -375,78 +214,28 @@
                         <input type="tel" placeholder="Enter Zip Code" name="phone" id="zipCode"
                             class="input zipinput is-rounded" />
                     </div>
-
-
                     <button class="button is-success is-small is-outlined" id="submit-button">Find my Furever
                         Friend</button>
                 </div>
-
-            </div>
-        </section>
-
-
-        <!--Map Section-->
-        <section id="locate-search">
-            <div class="flex-row"> 
-                <h2 class="section-title primary-border">Locate Your ********</h2>
-            </div>
-
-
-
-
-    <!--About us us-->
-    <div class="block">
-        <article class="message is-success">
-            <div class="message-header">
-                <p>About us here at The Shelter Stop</p>
-            </div>
-            <div class="message-body">
-                The Shelter Stop was created to increase views of adoptable pets, in order to maximize the rehoming
-                rates of those friends in need.
-                <br />
-                When searching for a new pet, it's important to find your perfect match, but what if that perfect match
-                isn't showing on one site? Or in one shelter?
-                <br />
-                That's where The Shelter Stop comes in.
-                <br />
-                By pulling adoptable pets from multiple locations, we provide a one stop shop that will help ensure no
-                friend in need is overlooked. We hope we can help you find your furever friend, wherever they may be.
-            </div>
-        </article>
-    </div>
-
-
+            </article>
+            <!--Map Section-->
+            <section id="locate-search">
+                <div class="flex-row">
+                    <h2 class="section-title primary-border">Locate Your ********</h2>
+                </div>
+            </section>
+        </div>
     </section>
-
-
-    <p>
-        <!--ABOUT US INFORMATION-->
-    </p>
-    </div>
-    </section>
-
+            <section id="locate-search">
+                <div class="flex-row">
+                    <h2 class="section-title primary-border">Locate Your ********</h2>
+                </div>
+            </section>
 
     <!--CONTACT US SECTION???-->
     <section>
         <div>
             <h2>Reach Out</h2>
-        </div>
-        <div>
-            <div>
-                <h3>The Shelter shop</h3>
-
-
-                <div class="is-warning" id='map'>
-                    <div class="formBlock">
-                        <form id="form">
-                            <!-- WILL NEED TO DELETE THIS INPUT AND CHANGE TO CLICK READER IN JS, JUST A PLACEHOLDER FOR NOW: -->
-                            <input type="text" name="end" class="input" id="destination" placeholder="Choose end point" />
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
         <!--DISPLAYING THE ADOPTABLE PETS-->
         <section>
@@ -455,13 +244,13 @@
                 <!--This section needs to be dynamically created to show up to date adoptable pets-->
                 <div class="card pet-card is-hidden">
                     <div class="card-image">
-                        <figure class="image is-4x3" >
+                        <figure class="image is-4x3">
                             <img class="pet-image">
                         </figure>
                     </div>
                     <div class="card-content">
                         <div class="content">
-                            <h3 class="pet-name"></h3> 
+                            <h3 class="pet-name"></h3>
                             <h6>Pet description:</h6>
                             <p class="pet-description"></p>
                             <a class="pet-url" href="#">Get details</a>
@@ -472,13 +261,13 @@
                 </div>
                 <div class="card pet-card is-hidden">
                     <div class="card-image">
-                        <figure class="image is-4x3" >
+                        <figure class="image is-4x3">
                             <img class="pet-image">
                         </figure>
                     </div>
                     <div class="card-content">
                         <div class="content">
-                            <h3 class="pet-name"></h3> 
+                            <h3 class="pet-name"></h3>
                             <h6>Pet description:</h6>
                             <p class="pet-description"></p>
                             <a class="pet-url" href="#">Get details</a>
@@ -489,83 +278,63 @@
                 </div>
             </div>
         </section>
-        <div>
-            <h3 id="#contact">Contact Us</h3>
-            <form>
-                <label for="contact-name">Your Name</label>
-                <input type="text" id="contact-name" placeholder="Your Name" />
+    </section>
 
-                <label for="contact-message">Message</label>
-                <textarea id="contact-message" placeholder="Message"></textarea>
-
-                <button class="button is-black">Submit</button>
-
-
-        </section>
-
-        <!--Contact Us Section-->
-        <section id="contact-us" class="contact">
-        <div class="flex-row">   
+    <!--Contact Us Section-->
+    <section id="contact-us" class="contact">
+        <div class="flex-row">
             <h2 class="section-title secondary-border">Contact Us</h2>
-        </div>     
-            <div class="contact-info">
-                <div>
-                    <h3>The Shelter Stop</h3>
-                    <p>
-                        Any questions about The Shelter Stop? Not seeing something you'd like?
-                        <br />
-                        Let us know and we'll be happy to talk to you!
-                    </p>
-                    <address>
-                        Street Address <br/>
-                        Some Town, State <br/>
-                        Area Code <br/>
-                        P: ###.###.#### <br/>
-                        E: <a href="mailto:ashleyw1319@gmail.com">adopt@theshelterstop.com</a>
-                    </address>
-                </div>
-
-                <div class="contact-form">
-                    <h3>We'd Love to Hear From You!</h3>
-                    <form>
-                        <label for="contact-name">Your Name</label>
-                        <input type="text" id="contact-name" placeholder="Your Name" />
-
-                        <label for="contact-message">Message</label>
-                        <textarea id="contact-message" placeholder="Message"></textarea>
-
-
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-                
+        </div>
+        <div class="contact-info">
+            <div>
+                <h3>The Shelter Stop</h3>
+                <p>
+                    Any questions about The Shelter Stop? Not seeing something you'd like?
+                    <br />
+                    Let us know and we'll be happy to talk to you!
+                </p>
+                <address>
+                    Street Address <br />
+                    Some Town, State <br />
+                    Area Code <br />
+                    P: ###.###.#### <br />
+                    E: <a href="mailto:ashleyw1319@gmail.com">adopt@theshelterstop.com</a>
+                </address>
             </div>
-        </section>
 
-        <!--footer-->
-        <footer>
-            <h2> 🐾 Made with love by Amazing Giraffes</h2>
-            <div> 
-                &copy; 2022 The Shelter Stop
+            <div class="contact-form">
+                <h3>We'd Love to Hear From You!</h3>
+                <form>
+                    <label for="contact-name">Your Name</label>
+                    <input type="text" id="contact-name" placeholder="Your Name" />
 
-    <footer class="footer">
-        <!-- Added map to footer: -->
-        <div class="is-warning" id='map'>
-            <div class="formBlock">
-                <form id="form">
-                    <!-- WILL NEED TO DELETE THIS INPUT AND CHANGE TO CLICK READER IN JS, JUST A PLACEHOLDER FOR NOW: -->
-                    <input type="text" name="end" class="input" id="destination" placeholder="Choose end point" />
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" placeholder="Message"></textarea>
+
+
+                    <button type="submit">Submit</button>
                 </form>
             </div>
-        </div>
-        <div class="content has-text-centered">
-            <p>
-                <strong>❤️ The Shelter Shop</strong> made by
-            <div> Amazing Giraffes </div>
-            <div>
-                &copy; 2022 The Shelter Shop
 
-            </div>
-        </footer>
-    </body>
+        </div>
+    </section>
+
+    <!--footer-->
+        <h2> 🐾 Made with love by Amazing Giraffes</h2>
+            &copy; 2022 The Shelter Stop
+
+            <footer class="footer">
+                <!-- Added map to footer: -->
+                <div class="is-warning" id='map'>
+                    <div>
+                        <form id="form">
+                            <!-- this is just a place holder for the map to work in the JS -->
+                            <input type="text" name="end" class="input" id="destination" />
+
+                        </form>
+                    </div>
+                </div>
+            </footer>
+</body>
+
 </html>

@@ -6,7 +6,6 @@ const submitButton = document.getElementById('submit-button');
 //Test to see if JS is being read
 console.log("Test verified");
 
-
 //key and secret key
 const key = "yU3oem5LTLC04KuehXub1betrxaHobbODTgGpASsVR3IGZ0mXt";
 const secret = "Kt7V8JuOoh8711iAGIWlMRPbeBoVXQCcnVr5c6Dp";
@@ -48,30 +47,22 @@ async function showAnimals(animalType, sexType, sizeType, ageType, house_trained
         special_needs: special_needsType,
         location,
         page,
+        //THIS IS WHAT LIMITS THE 429 ERROR, the limit shows how many animals are in your zip code
         limit: 2,
     });
-    let Idx = (page - 1) * 2;
+    let Idx = (page - 1) * 2; //This # must match the limit above
     apiResult.data.animals.forEach(function (animal) {
         console.log(` -- ${++Idx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
     });
     return apiResult.data.animals
 }
 
-// This implementation did not work 
-// $(document).ready(function(){
-//     $("input[type='submit-button']").click(function(){
-//         var radioValue = $("input[name='type']:checked").val();
-//         if(radioValue){
-//             console.log(radioValue)
-//         }
-//     })
-// })
 
 async function pullpets() {
     //currently this function only shows dogs in the 32219 florida zip code
 
     const animals = await showAnimals(radioValue, $("#dropdownGender").val(), $("#dropdownSize").val(), $("#dropdownAge").val(), $("#dropdownHT").val(), $("#dropdownSN").val(), $("#zipCode").val(),);
-    console.log("Showing results for:")
+    console.log("Showing results for:" + radioValue);
     console.log($("#dropdownGender").val());
     console.log($("#dropdownSize").val());
     console.log($("#dropdownAge").val());
@@ -79,34 +70,41 @@ async function pullpets() {
     console.log("Special needs: " + $("#dropdownSN").val());
     console.log($("#zipCode").val());
 
+    //reveal each pet card's hidden Bulma styling
     $(".pet-card").each(function (index) {
         this.classList.remove("is-hidden");
     });
 
+    //for each pet indexed in the network tab, show the 0th medium sized photo for the pet provided on the page
     $(".pet-image").each(function (index) {
         this.src = animals[index].photos[0].medium
     });
-
+    //for each pet indexed, show the name for the class of the pet-name in the pet-name's card
     $(".pet-name").each(function (index) {
         this.textContent = animals[index].name
     });
-
+    //for each indexed pet, show the description ID from the network tab, or "No description available" if none is provided on the petfinder page
     $(".pet-description").each(function (index) {
         this.textContent = animals[index].description || "No description available"
     });
-
+    //for each indexed pet in the network tab, show the URL in the <div> with the .pet-url class
     $(".pet-url").each(function (index) {
         this.href = animals[index].url
     });
 
+    //for each indexed pet on the network tab,
     $(".get-direction").each(function (index) {
+        //on clicking the <button> element
         this.onclick = function (event) {
+            //create a constant address for each indexed animal, pulling the address 
             const address = animals[index].contact.address
+            //because the network shows the address in different lines on the petfinder website, we have to combine the addresses
             let search = address.address1
             if (address.address2)
                 search += ", " + address.address2;
             search += " " + address.city + ", " + address.state + " " + address.postcode
             document.getElementById("destination").value = search;
+            //submit the map function
             submitForm(event);
         }
     });
@@ -210,5 +208,3 @@ function submitForm(event) {
 //Assigns the form to form variable
 const form = document.getElementById('form');
 
-//Call the submitForm() function when submitting the form - WILL NEED TO CHANGE THIS TO MATCH THE PETFINDER API UPON CLICKING A PET
-form.addEventListener('submit', submitForm);
