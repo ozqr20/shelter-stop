@@ -287,13 +287,26 @@ input:nth-child(1) {
 #dropdownSN,
 #zipCode,
 #dropdownGender{
-    padding: 2px;
 	background-color: var(--primary-color);
     opacity: .7;
 	color: white;
     text-align: center;
 }
 
+.select:not(.is-multiple):not(.is-loading)::after {
+    border: 3px solid transparent;
+    border-radius: 2px;
+    border-right: 0;
+    border-top: 0;
+    content: " ";
+    display: block;
+    height: 0.625em;
+    margin-top: 1.5621em;
+    pointer-events: none;
+    position: absolute;
+    transform: rotate(-45deg);
+    width: 0.625em;
+}
 
 /*Pet Search Section Styling End*/
 
@@ -455,6 +468,15 @@ input:nth-child(1) {
    .step-text {
        flex: 100%;
    }
+   .petSelect{
+    flex-direction: column;
+    }
+    .sexPet, .sizePet, .agePet, .housePet, .specialPet{
+        display: flex;
+    }
+    .housePet, .specialPet{
+        margin-right: 30vh;
+    }
 }
 
 /*Media Query for Mobile Phones and Smaller*/
