@@ -48,9 +48,9 @@ async function showAnimals(animalType, sexType, sizeType, ageType, house_trained
         location,
         page,
         //THIS IS WHAT LIMITS THE 429 ERROR, the limit shows how many animals are in your zip code
-        limit: 2,
+        limit: 12,
     });
-    let Idx = (page - 1) * 2; //This # must match the limit above
+    let Idx = (page - 1) * 12; //This # must match the limit above
     apiResult.data.animals.forEach(function (animal) {
         console.log(` -- ${++Idx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
     });
