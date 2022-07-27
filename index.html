@@ -94,14 +94,14 @@
 
     <!--Display Adoptable Pets Section-->
     <section id="pet-search" class="steps">
-        <div class="flex-row">
-            <h2 class="section-title primary-border">Adoptable Pet Search:</h2>
+        <div class="flex-row is-flex is-align-items-center is-flex-direction-column">
+            <h2 class="section-title primary-border is-flex is-justify-content-center">Adoptable Pet Search:</h2>
 
             <article class="search-content">
-                <div class="box zip-btn is-flex">
+                <div class="box zip-btn">
 
                     <!-- User pet selection -->
-                    <div class="block is-flex-direction-row">
+                    <div class="block is-flex-direction-row is-flex is-justify-content-center is-align-items-center">
                         <div class="control">
                             <!-- Dog selection -->
                             <label class="radio" id="dogCheckbox">
@@ -148,14 +148,14 @@
                     <!--End pet selection division -->
 
                     <!-- Gender, Age, Size and Stalled labor selections  -->
-                    <div class="block">
+                    <div class="block is-flex is-align-items-center">
 
                         <!-- Gender -->
-                        <div>
-                            <h2 class="subtitle">Sex</h2>
-                        </div>
-                        <div class="select is-rounded">
 
+                        <div class="select is-rounded">
+                            <div>
+                                <h2 class="subtitle is-flex is-justify-content-center">Sex</h2>
+                            </div>
                             <select id="dropdownGender">
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
@@ -163,10 +163,11 @@
                             </select>
                         </div>
                         <!-- Size -->
-                        <div>
-                            <h2 class="subtitle">Size</h2>
-                        </div>
+
                         <div class="select is-rounded">
+                            <div>
+                                <h2 class="subtitle is-flex is-justify-content-center">Size</h2>
+                            </div>
                             <select id="dropdownSize">
                                 <option value="small">Small</option>
                                 <option value="medium">Medium</option>
@@ -176,10 +177,11 @@
                             </select>
                         </div>
                         <!-- Age -->
-                        <div>
-                            <h2 class="subtitle">Age</h2>
-                        </div>
+
                         <div class="select is-rounded">
+                            <div>
+                                <h2 class="subtitle is-flex is-justify-content-center">Age</h2>
+                            </div>
                             <select id="dropdownAge">
                                 <option value="baby">Baby</option>
                                 <option value="young">Young</option>
@@ -189,32 +191,37 @@
                             </select>
                         </div>
                         <!--added house trained drop down-->
-                        <div>
-                            <h2 class="subtitle">House-trained?</h2>
-                        </div>
+
                         <div class="select is-rounded">
+                            <div>
+                                <h2 class="subtitle is-flex is-justify-content-center">House-trained?</h2>
+                            </div>
                             <select id="dropdownHT">
                                 <option value="false">Not A Problem</option>
                                 <option value="true">Yes</option>
                             </select>
                         </div>
                         <!--added special needs drop down-->
-                        <div>
-                            <h2 class="subtitle">Special needs?</h2>
-                        </div>
+
                         <div class="select is-rounded">
+                            <div>
+                                <h2 class="subtitle is-flex is-justify-content-center">Special needs?</h2>
+                            </div>
                             <select id="dropdownSN">
                                 <option value="false">Prefer None</option>
                                 <option value="true">Special Needs Welcomed</option>
                             </select>
                         </div>
                         <div>
-                            <h2 class="subtitle">Enter Zip Code:</h2>
-                        </div>
+                            <div>
+                                <h2 class="subtitle is-flex is-justify-content-center">
+                                    <br>Enter Zip Code:</h2>
+                            </div>
                         <input type="tel" placeholder="Enter Zip Code" name="phone" id="zipCode"
-                            class="input zipinput is-rounded" />
+                            class="input zipinput is-rounded has-text-light" />
+                        </div>
                     </div>
-                    <button class="button is-success is-small is-outlined" id="submit-button">Find my Furever
+                    <button class="button is-info is-small is-outlined is-rounded centerBtn" id="submit-button">Find my Furever
                         Friend</button>
                 </div>
             </article>

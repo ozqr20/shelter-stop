@@ -123,9 +123,15 @@ footer a {
     align-items: flex-start;
     background-attachment: fixed;
     background-position: 50%;
-    padding: 150px;
+    padding-top: 1px;
 }
-
+.centerBtn {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
 
 .hero-cta {
     width: 35%;
@@ -210,8 +216,6 @@ footer a {
 
 /* Style Map Section*/
 
-/*Map Styling Ends*/
-
 #map {
     text-align: center;
     height:50vh;
@@ -256,6 +260,9 @@ input:nth-child(1) {
 }
 
 
+/*Map Styling Ends*/
+
+
 /*----------------------------------------------------------*/
 
 /*Style Pet Search Section*/
@@ -273,6 +280,21 @@ input:nth-child(1) {
 .pet-image {
     max-height: 30rem;
 }
+
+#dropdownSize,
+#dropdownAge,
+#dropdownHT,
+#dropdownSN,
+#zipCode,
+#dropdownGender{
+    padding: 2px;
+	background-color: var(--primary-color);
+    opacity: .7;
+	color: white;
+    text-align: center;
+}
+
+
 /*Pet Search Section Styling End*/
 
 /*Style Contact Us Section*/
@@ -354,12 +376,6 @@ input:nth-child(1) {
     background: var(--tertiary-color);
 }
 /*Styling of Contact Section Ends*/
-
-
-
-.flex-row {
-    display: flex;
-}
 
 
 
