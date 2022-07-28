@@ -123,9 +123,15 @@ footer a {
     align-items: flex-start;
     background-attachment: fixed;
     background-position: 50%;
-    padding: 150px;
+    padding-top: 1px;
 }
-
+.centerBtn {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
 
 .hero-cta {
     width: 35%;
@@ -210,8 +216,6 @@ footer a {
 
 /* Style Map Section*/
 
-/*Map Styling Ends*/
-
 #map {
     text-align: center;
     height:50vh;
@@ -256,6 +260,9 @@ input:nth-child(1) {
 }
 
 
+/*Map Styling Ends*/
+
+
 /*----------------------------------------------------------*/
 
 /*Style Pet Search Section*/
@@ -273,6 +280,34 @@ input:nth-child(1) {
 .pet-image {
     max-height: 30rem;
 }
+
+#dropdownSize,
+#dropdownAge,
+#dropdownHT,
+#dropdownSN,
+#zipCode,
+#dropdownGender{
+	background-color: var(--primary-color);
+    opacity: .7;
+	color: white;
+    text-align: center;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+    border: 3px solid transparent;
+    border-radius: 2px;
+    border-right: 0;
+    border-top: 0;
+    content: " ";
+    display: block;
+    height: 0.625em;
+    margin-top: 1.5621em;
+    pointer-events: none;
+    position: absolute;
+    transform: rotate(-45deg);
+    width: 0.625em;
+}
+
 /*Pet Search Section Styling End*/
 
 /*Style Contact Us Section*/
@@ -357,12 +392,6 @@ input:nth-child(1) {
 
 
 
-.flex-row {
-    display: flex;
-}
-
-
-
 /*Media Query for Smaller Desktop Screens and Smaller*/
 @media screen and (max-width: 980px) {
    header {
@@ -410,6 +439,15 @@ input:nth-child(1) {
    .contact-info iframe {
        flex: 1 100%;
    }
+   .petSelect{
+    flex-direction: column;
+    }
+    .sexPet, .sizePet, .agePet, .housePet, .specialPet{
+        display: flex;
+    }
+    .housePet, .specialPet{
+        margin-right: 25vh;
+    }
 }
 
 /*Media Query for Tablets and Smaller*/
@@ -439,6 +477,7 @@ input:nth-child(1) {
    .step-text {
        flex: 100%;
    }
+
 }
 
 /*Media Query for Mobile Phones and Smaller*/
@@ -469,6 +508,9 @@ input:nth-child(1) {
 
     .contact-form {
         order: 3;
+    }
+    .control{
+        padding: 0 100px;
     }
 }
 
