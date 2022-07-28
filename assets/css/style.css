@@ -439,6 +439,15 @@ input:nth-child(1) {
    .contact-info iframe {
        flex: 1 100%;
    }
+   .petSelect{
+    flex-direction: column;
+    }
+    .sexPet, .sizePet, .agePet, .housePet, .specialPet{
+        display: flex;
+    }
+    .housePet, .specialPet{
+        margin-right: 25vh;
+    }
 }
 
 /*Media Query for Tablets and Smaller*/
@@ -468,15 +477,7 @@ input:nth-child(1) {
    .step-text {
        flex: 100%;
    }
-   .petSelect{
-    flex-direction: column;
-    }
-    .sexPet, .sizePet, .agePet, .housePet, .specialPet{
-        display: flex;
-    }
-    .housePet, .specialPet{
-        margin-right: 30vh;
-    }
+
 }
 
 /*Media Query for Mobile Phones and Smaller*/
@@ -507,6 +508,9 @@ input:nth-child(1) {
 
     .contact-form {
         order: 3;
+    }
+    .control{
+        padding: 0 100px;
     }
 }
 
